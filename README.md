@@ -1,1 +1,3 @@
-"# socratesnews-engine" 
+# socratesnews-engine
+
+> Projeto analítico do Jornal Socrates
