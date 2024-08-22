@@ -1,0 +1,15 @@
+\newcommand{\frontpagefooter}{
+    \begin{tikzpicture}[remember picture, overlay]
+        \draw[thick] ([xshift=-0.5\textwidth, yshift=0.5cm]current page.south) -- ([xshift=0.5\textwidth, yshift=0.5cm]current page.south);
+        \draw[thick] ([xshift=-0.5\textwidth, yshift=2cm]current page.south) -- ([xshift=0.5\textwidth, yshift=2cm]current page.south);
+        \node[anchor=west, xshift=-0.5\textwidth+0.2cm, yshift=1.25cm] at (current page.south) {\includegraphics[height=1.2cm]{images/logo_s.png}};
+        \node[anchor=west, xshift=-0.5\textwidth+1.5cm, yshift=1.25cm] at (current page.south) {\includegraphics[height=1.2cm]{images/barcode.png}};
+        \node[anchor=west, xshift=-4cm, yshift=1.25cm] at (current page.south) {\parbox{10cm}{ 
+        Texto linha 1 vai até mais ou menor por aqui ou por aqui.\\
+        Texto linha 2 vai até mais ou menor por aqui ou por aqui.\\
+        Texto linha 3 vai até mais ou menor por aqui ou por aqui.
+        }};
+        \draw[thick] ([xshift=6cm, yshift=1.8cm]current page.south) -- ([xshift=6cm, yshift=0.7cm] current page.south);
+        \node[anchor=east, xshift=0.5\textwidth, yshift=1.25cm] at (current page.south) {\parbox{3cm}{\centering Quer anunciar?\\+55 11 99123 6056}};
+    \end{tikzpicture}
+}

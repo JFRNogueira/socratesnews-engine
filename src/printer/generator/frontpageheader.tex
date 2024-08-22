@@ -1,0 +1,23 @@
+\newcommand{\frontpageheader}{
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=west, text=black, xshift=0.5cm, yshift=-0.9cm] at (current page.north west) {\startedattext};
+        \filldraw[fill=secondary, draw=none] 
+        ([xshift=-5.5cm, yshift=-1.3cm]current page.north east) rectangle ++(5cm, 0.8cm);
+        \node[anchor=center, text=white, xshift=-3cm, yshift=-0.9cm] at (current page.north east) {\edition{1}{1}};
+        \filldraw[fill=primary, draw=none] 
+        ([xshift=0.5cm, yshift=-1.3cm]current page.north west) rectangle ([xshift=-0.5cm, yshift=-4.3cm]current page.north east);
+        \node[anchor=center, align=center, text=white, xshift=3cm, yshift=-2.8cm] at (current page.north west) {\parbox{4cm}{\centering \dailyphrase}};
+        \node[anchor=center, align=center, text=white, xshift=-3cm, yshift=-2.8cm] at (current page.north east) {\parbox{4cm}{
+            \centering Editor chefe\\ \chiefeditor \\
+            \vspace{0.2cm}
+            \qrcode[height=1.5cm]{\websiteurl}
+        }};
+        \node[anchor=center, text=black, yshift=-2.8cm] at (current page.north) {\includegraphics[height=2cm]{images/logo.png}};
+        \node[anchor=center, yshift=-4.8cm] at (current page.north) {\makebox[\textwidth]{\centering \textcolor{primary}{\textbf{\todaystr}}}};
+        \node[anchor=east, xshift=-0.5cm, yshift=-4.8cm] at (current page.north east) {\makebox{\textcolor{primary}{\textbf{\price}}}};
+        \filldraw[fill=black, draw=none] 
+        ([xshift=0.5cm, yshift=-5.3cm]current page.north west) rectangle ([xshift=-0.5cm, yshift=-5.4cm]current page.north east);
+        \filldraw[fill=primary, draw=none] 
+        ([xshift=0.5cm, yshift=-5.6cm]current page.north west) rectangle ([xshift=-0.5cm, yshift=-5.8cm]current page.north east);
+    \end{tikzpicture}
+}
