@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.31)  21 AUG 2024 22:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.31)  24 AUG 2024 15:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./page_01.tex
-(page_01.tex
+**./page_31.tex
+(page_31.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
 (C:\Program Files\MiKTeX\tex/latex/base\minimal.cls
@@ -558,27 +558,25 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \Gm@layoutvoffset=\dimen293
 \Gm@dimlist=\toks36
 
-(C:\Program Files\MiKTeX\tex/latex/geometry\geometry.cfg)) (page_01.aux
-<Reading QR code for "https://www.jornalsocrates.com.br" at level 3-M from aux 
-file.>
-)
-\openout1 = `page_01.aux'.
+(C:\Program Files\MiKTeX\tex/latex/geometry\geometry.cfg)) (page_31.aux)
+\openout1 = `page_31.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
- (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+
+(C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count330
 \scratchdimen=\dimen294
@@ -637,88 +635,116 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+<images/logo_black.png, id=4, 271.0125pt x 84.315pt>
+File: images/logo_black.png Graphic file (type png)
+<use images/logo_black.png>
+Package pdftex.def Info: images/logo_black.png  used on input line 96.
+(pdftex.def)             Requested size: 54.87144pt x 17.07182pt.
+<images/infantil_1.png, id=6, 1027.84pt x 1027.84pt>
+File: images/infantil_1.png Graphic file (type png)
+<use images/infantil_1.png>
+Package pdftex.def Info: images/infantil_1.png  used on input line 102.
+(pdftex.def)             Requested size: 416.11609pt x 416.11609pt.
+
+Underfull \hbox (badness 1102) in paragraph at lines 102--102
+[]\OT1/cmr/m/n/10 No dia 23 de agosto, cel-
+ []
+
+
+Underfull \hbox (badness 6157) in paragraph at lines 102--102
+\OT1/cmr/m/n/10 dos porta-avi~oes. Esses
+ []
+
+
+Underfull \hbox (badness 1019) in paragraph at lines 102--102
+\OT1/cmr/m/n/10 super-her^^Sois do c^^Seu! Eles
+ []
+
+
+Underfull \hbox (badness 1596) in paragraph at lines 102--102
+\OT1/cmr/m/n/10 Eles apren-dem a voar em
+ []
+
+
+Underfull \hbox (badness 1997) in paragraph at lines 102--102
+\OT1/cmr/m/n/10 Que tal col-orir a im-agem
+ []
+
+
+Underfull \hbox (badness 1231) in paragraph at lines 102--102
+\OT1/cmr/m/n/10 de um avi~ao naval? Use
+ []
+
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 117.
+(Font)              <7> on input line 102.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 117.
+(Font)              <5> on input line 102.
+<images/infantil_2.png, id=7, 406.51875pt x 407.02063pt>
+File: images/infantil_2.png Graphic file (type png)
+<use images/infantil_2.png>
+Package pdftex.def Info: images/infantil_2.png  used on input line 104.
+(pdftex.def)             Requested size: 127.60747pt x 138.70813pt.
 
-
-
-<QR code requested for "https://www.jornalsocrates.com.br" in version 0-M.>
-
-<Copying the QR code for "https://www.jornalsocrates.com.br" in version 3-M as 
-previously calculated.>
-<images/logo.png, id=4, 311.1625pt x 95.35625pt>
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 117.
-(pdftex.def)             Requested size: 185.69237pt x 56.9055pt.
-<images/image1.jpg, id=6, 1927.2pt x 1276.77pt>
-File: images/image1.jpg Graphic file (type jpg)
-<use images/image1.jpg>
-Package pdftex.def Info: images/image1.jpg  used on input line 119.
-(pdftex.def)             Requested size: 554.81558pt x 221.9185pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 119--119
-[]\OT1/cmr/m/n/10 Lorem ip-sum do-lor sit
+Overfull \hbox (1.56294pt too wide) in paragraph at lines 104--104
+[][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--119
-\OT1/cmr/m/n/10 ve-sti-bu-lum ut, pla-ce-rat
+Underfull \hbox (badness 10000) in paragraph at lines 104--104
+\OT1/cmr/m/n/10 i-mais mar-in-hos pos-suem
  []
 
 
-Underfull \hbox (badness 7888) in paragraph at lines 119--119
-\OT1/cmr/m/n/10 ha-bi-tant morbi tri-sti-que
+Underfull \hbox (badness 10000) in paragraph at lines 104--104
+\OT1/cmr/m/n/10 e dois cora^^Xc~oes menores
  []
 
-File: images/image1.jpg Graphic file (type jpg)
-<use images/image1.jpg>
-Package pdftex.def Info: images/image1.jpg  used on input line 120.
-(pdftex.def)             Requested size: 138.68184pt x 110.94951pt.
-File: images/image1.jpg Graphic file (type jpg)
-<use images/image1.jpg>
-Package pdftex.def Info: images/image1.jpg  used on input line 121.
-(pdftex.def)             Requested size: 138.68184pt x 110.94951pt.
-<images/logo_s.png, id=7, 242.9075pt x 316.68312pt>
-File: images/logo_s.png Graphic file (type png)
-<use images/logo_s.png>
-Package pdftex.def Info: images/logo_s.png  used on input line 122.
-(pdftex.def)             Requested size: 26.18617pt x 34.14322pt.
-<images/barcode.png, id=8, 239.39438pt x 79.79813pt>
-File: images/barcode.png Graphic file (type png)
-<use images/barcode.png>
-Package pdftex.def Info: images/barcode.png  used on input line 122.
-(pdftex.def)             Requested size: 102.42982pt x 34.14322pt.
+
+Underfull \hbox (badness 8170) in paragraph at lines 104--104
+\OT1/cmr/m/n/10 O sangue dos polvos ^^Se
+ []
+
+<images/infantil_3.png, id=8, 408.02437pt x 407.02063pt>
+File: images/infantil_3.png Graphic file (type png)
+<use images/infantil_3.png>
+Package pdftex.def Info: images/infantil_3.png  used on input line 106.
+(pdftex.def)             Requested size: 127.60692pt x 138.70813pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--106
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--106
+\OT1/cmr/m/n/10 bombear sangue para as
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--106
+\OT1/cmr/m/n/10 br^anquias, onde ocorre a
+ []
+
 [1{C:/Users/johan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./images/l
-ogo.png> <./images/image1.jpg> <./images/logo_s.png> <./images/barcode.png>]
-(page_01.aux
-<Reading QR code for "https://www.jornalsocrates.com.br" at level 3-M from aux 
-file.>
-)
+ogo_black.png> <./images/infantil_1.png (PNG copy)> <./images/infantil_2.png> <
+./images/infantil_3.png>] (page_31.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 17573 strings out of 474486
- 349700 string characters out of 5753570
- 1972542 words of memory out of 5000000
- 39603 multiletter control sequences out of 15000+600000
- 559705 words of font info for 41 fonts, out of 8000000 for 9000
+ 17549 strings out of 474486
+ 349222 string characters out of 5753570
+ 1943542 words of memory out of 5000000
+ 39582 multiletter control sequences out of 15000+600000
+ 558684 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,8n,117p,990b,741s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\johan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcbx
-1000.pk> <C:\Users\johan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\tcrm1000.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pf
-b><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
-m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on page_01.pdf (1 page, 303572 bytes).
+ 84i,9n,117p,1014b,715s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
+m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on page_31.pdf (1 page, 3105183 bytes).
 PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
+ 27 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
