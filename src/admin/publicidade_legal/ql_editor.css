@@ -1,0 +1,70 @@
+.ql-align-center {
+  text-align: center;
+}
+.ql-align-right {
+  text-align: right;
+}
+.ql-align-justify {
+  text-align: justify;
+}
+
+.ql-size-small {
+  font-size: 0.75em;
+}
+.ql-size-large {
+  font-size: 1.5em;
+}
+.ql-size-huge {
+  font-size: 2.5em;
+}
+
+ol li.ql-indent-1 {
+  counter-increment: list-1;
+}
+ol li.ql-indent-1:before {
+  content: counter(list-1, lower-alpha) ". ";
+}
+ol li.ql-indent-1 {
+  counter-reset: list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+}
+.ql-indent-1:not(.ql-direction-rtl) {
+  padding-left: 3em;
+}
+li.ql-indent-1:not(.ql-direction-rtl) {
+  padding-left: 4.5em;
+}
+.ql-indent-1.ql-direction-rtl.ql-align-right {
+  padding-right: 3em;
+}
+li.ql-indent-1.ql-direction-rtl.ql-align-right {
+  padding-right: 4.5em;
+}
+
+ol li.ql-indent-2 {
+  counter-increment: list-2;
+}
+ol li.ql-indent-2:before {
+  content: counter(list-2, lower-roman) ". ";
+}
+ol li.ql-indent-2 {
+  counter-reset: list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+}
+.ql-indent-2:not(.ql-direction-rtl) {
+  padding-left: 6em;
+}
+li.ql-indent-2:not(.ql-direction-rtl) {
+  padding-left: 7.5em;
+}
+.ql-indent-2.ql-direction-rtl.ql-align-right {
+  padding-right: 6em;
+}
+li.ql-indent-2.ql-direction-rtl.ql-align-right {
+  padding-right: 7.5em;
+}
+
+.ql-font-serif {
+  font-family: Georgia, Times New Roman, serif;
+}
+.ql-font-monospace {
+  font-family: Monaco, Courier New, monospace;
+}
