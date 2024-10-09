@@ -19,14 +19,18 @@ def usuario_criar():
         col11, col12 = st.columns(2)
         
         with col11:
-            st.text_input('Nome', help='Nome que será exibido para no app')
-            st.text_input('URL da imagem', help='Essa URL de imagem será chamada todas as vezes que o usuário for exibido no app')
+            st.text_input('Nome', help='Nome que será exibido para no app', key='user_name')
+            st.text_input('URL da imagem', help='Essa URL de imagem será chamada todas as vezes que o usuário for exibido no app', key='user_image_url')
         
         with col12:
-            st.text_input('UID', help='UID gerado no console do Firebase')
-            st.text_input('E-mail', help='E-mail cadastrado no Firebase')
+            st.text_input('UID', help='UID gerado no console do Firebase', key='user_uid')
+            st.text_input('E-mail', help='E-mail cadastrado no Firebase', key='user_email')
         
-        st.text_area('Bio', help='Pequeno texto de até 200 caracteres que serve como uma introdução do usuário', max_chars=200)
+        st.text_area('Bio', help='Pequeno texto de até 200 caracteres que serve como uma introdução do usuário', max_chars=200, key='user_bio')
+        
+        st.multiselect('Permissões', options=['admin', 'journalist', 'reader'], help='Permissões de acesso do usuário', key='user_roles')
+        if 'journalist' in st.session_state.user_roles:
+            st.multiselect('Seções permitidas', options=['Mundo', 'Brasil', 'Negócios'], help='Seções que podem ser editadas pelo usuário', key='user_journalist_sections')
         
         st.button('Criar usuário')
         

@@ -32,10 +32,7 @@ def publish(title, section, imageSource, imageUrl, publishAtDate, publishAtTime,
         "tags": tags.split(";"),
         "publishedAt": formatted_date,
     }
-    print('Payload:', payload)
     response = requests.post(API_URL, json=payload)
-    print(response.status_code)
-    print(response.json())
     return response.status_code, response.json()['newsId']
 
 def open_news(newsId):

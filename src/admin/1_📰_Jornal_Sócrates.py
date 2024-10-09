@@ -13,8 +13,8 @@ if not 'authenticated' in st.session_state:
 # Função principal para gerenciar a navegação
 def main():
     st.set_page_config(
-        page_title="Ex-stream-ly Cool App",
-        page_icon="🧊",
+        page_title="Jornal Sócrates",
+        page_icon="📰",
         layout="wide",
         initial_sidebar_state="expanded",
         menu_items={
