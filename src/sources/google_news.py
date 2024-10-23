@@ -2,7 +2,7 @@ import requests
 # from bs4 import BeautifulSoup
 import os
 import pandas as pd
-from sources.news import News
+# from sources.news import News
 import time
 import streamlit as st
 
