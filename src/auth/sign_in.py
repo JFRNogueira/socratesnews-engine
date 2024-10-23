@@ -9,9 +9,9 @@ import time
 
 def sign_in_service(email, uid):
     try:
-        API_URL = f'https://socratesnews-dev-1aaab5bd4746.herokuapp.com/api/useruid/{uid}'
+        API_URL = f'{st.secrets['API_URL']}api/useruid/{uid}'
         payload = {
-            'supportUid': 'aKwP8Bwx34fW18Rkqr4u31uYoQ23',
+            'supportUid': st.secrets['SUPPORT_UID'],
             'uid': uid,
         }
         if email == 'johannes':
@@ -21,7 +21,7 @@ def sign_in_service(email, uid):
                 'email': 'johannes.nogueira@socratesdata.com', 
                 'authProvider': 'anonymous', 
                 'roles': ['reader', 'journalist', 'legal_ads', 'support', 'admin'], 
-                'uid': 'aKwP8Bwx34fW18Rkqr4u31uYoQ23', 
+                'uid': st.secrets['SUPPORT_UID'], 
                 '__t': 'provisory', 
                 'createdAt': '2024-07-25T17:24:11.567Z', 
                 'updatedAt': '2024-09-26T12:22:30.539Z', 
