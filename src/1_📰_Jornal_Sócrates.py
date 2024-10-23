@@ -4,9 +4,6 @@ from auth.sign_up import sign_up
 from auth.authentication import authentication
 
 
-if not 'authenticated' in st.session_state:
-    st.session_state.authenticated = False
-
 def main():
     st.set_page_config(
         page_title="Jornal Sócrates",

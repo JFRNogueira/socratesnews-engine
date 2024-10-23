@@ -14,11 +14,6 @@ from bot_jornalista.esporte import esporte
 
 
 
-from dotenv import load_dotenv
-import os
-load_dotenv()
-API_URL = os.getenv("API_URL")
-
 def main():
     st.set_page_config(
         page_title="Jornal Sócrates",
@@ -30,7 +25,6 @@ def main():
     
     if (not 'user' in st.session_state) or (not 'journalist' in st.session_state['user']['roles']):
         st.header('Jornalista', divider=True)
-        st.header(API_URL)
         st.markdown('Área exclusiva para uso de jornalistas e conta com funcionalidades auxiliares à postagem de notícias.')
         st.warning("Acesso negado. Para ter acesso, entre em contato com o suporte através do e-mail `contato@socratesdata.com`.", icon='⛔')
         st.stop()
@@ -59,9 +53,6 @@ def main():
             infantil()
         if menu_option == "Previsões":
             previsoes()
-        elif menu_option == "Logout":
-            st.session_state.authenticated = False
-            st.rerun()
 
 if __name__ == "__main__":
     main()

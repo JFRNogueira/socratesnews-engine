@@ -1,42 +1,38 @@
 import streamlit as st
-
 from usuarios.usuario_criar import usuario_criar
-from usuarios.usuario_listar import usuario_listar
-from usuarios.usuario_editar import usuario_editar
 
-
-
+from dotenv import load_dotenv
+import os
+load_dotenv()
+API_URL = os.getenv("API_URL")
 
 def main():
     st.set_page_config(
-        page_title="Usuários",
-        page_icon="👤",
+        page_title="Jornal Sócrates",
+        page_icon="📰",
         layout="wide",
         initial_sidebar_state="expanded",
-        menu_items={
-            'Get Help': 'https://www.extremelycoolapp.com/help',
-            'Report a bug': "https://www.extremelycoolapp.com/bug",
-            'About': "# This is a header. This is an *extremely* cool app!"
-        }
     )
-    options = ['Criar', 'Editar', 'Listar', 'Sair']
     
-    if st.session_state.authenticated:
-    # if not st.session_state.authenticated:
-        login()
+    if (not 'user' in st.session_state) or (not 'admin' in st.session_state['user']['roles']):
+        st.header('Usuários', divider=True)
+        st.markdown('Área exclusiva para gerenciamento de permissões e acessos.')
+        st.warning("Acesso negado. Para ter acesso, entre em contato com o suporte através do e-mail `contato@socratesdata.com`.", icon='⛔')
+        st.stop()
+        
     else:
-        st.sidebar.title("Menu")
+        options = ['Criar', 'Editar']
+    
+        st.sidebar.title("Menu", )
         menu_option = st.sidebar.radio("Selecione a opção", options)
 
         if menu_option == "Criar":
-            usuario_criar()
-        if menu_option == "Editar":
-            usuario_editar()
-        if menu_option == "Listar":
-            usuario_listar()
-        elif menu_option == "Logout":
-            st.session_state.authenticated = False
-            st.rerun()
+            st.header(API_URL)
+            # usuario_criar()
+        elif menu_option == "Editar":
+            st.warning("Em construção", icon='🏗️')
+        # if menu_option == "Listar":
+        #     usuario_listar()
 
 if __name__ == "__main__":
     main()

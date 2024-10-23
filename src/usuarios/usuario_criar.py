@@ -1,9 +1,4 @@
 import streamlit as st
-from streamlit_quill import st_quill
-import math
-from screeninfo import get_monitors
-import os
-from streamlit_extras.stylable_container import stylable_container
 
 
 def usuario_criar():
