@@ -1,16 +1,16 @@
 import streamlit as st
 
-from bot_jornalista.infantil import infantil
-from bot_jornalista.previsoes import previsoes
+# from bot_jornalista.infantil import infantil
+# from bot_jornalista.previsoes import previsoes
 
-from bot_jornalista.rpa import rpa
-from bot_jornalista.fontes_pendentes import fontes_pendentes
+# from bot_jornalista.rpa import rpa
+# from bot_jornalista.fontes_pendentes import fontes_pendentes
 from bot_jornalista.mundo import mundo
-from bot_jornalista.brasil import brasil
-from bot_jornalista.cet import cet
-from bot_jornalista.economia import economia
-from bot_jornalista.entretenimento import entretenimento
-from bot_jornalista.esporte import esporte
+# from bot_jornalista.brasil import brasil
+# from bot_jornalista.cet import cet
+# from bot_jornalista.economia import economia
+# from bot_jornalista.entretenimento import entretenimento
+# from bot_jornalista.esporte import esporte
 
 
 
