@@ -6,10 +6,10 @@ from auth.authentication import authentication
 
 
 
-from dotenv import load_dotenv
-import os
-load_dotenv()
-API_URL = os.getenv("API_URL")
+# from dotenv import load_dotenv
+# import os
+# load_dotenv()
+# API_URL = os.getenv("API_URL")
 
 
 def main():
@@ -20,7 +20,7 @@ def main():
         initial_sidebar_state="expanded",
     )
     
-    st.header(API_URL)
+    st.secrets['API_URL']
     st.header('Jornal Sócrates', divider=True)
     col1, col2 = st.columns(2, gap='large')
     with col1:
