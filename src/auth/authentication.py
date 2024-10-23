@@ -32,7 +32,9 @@ def authentication():
     with col2:
         st.markdown('Suas permissões:')
         
-        if 'user' in st.session_state:
+        if not 'user' in st.session_state:
+            st.warning("Faça login ao lado para visualizar suas permissões.")
+        else:
             
             if 'admin' in st.session_state['user']['roles']:
                 st.markdown('- [x] Administrador')
@@ -43,6 +45,11 @@ def authentication():
                 st.markdown('- [x] Jornalista')
             else:
                 st.markdown('- [ ] Jornalista')
+                
+            if 'legal_ads' in st.session_state['user']['roles']:
+                st.markdown('- [x] Publicidade Legal')
+            else:
+                st.markdown('- [ ] Publicidade Legal')
                 
             if 'support' in st.session_state['user']['roles']:
                 st.markdown('- [x] Suporte')
