@@ -1,18 +1,12 @@
-# main.py
 import streamlit as st
-# from auth.sign_in import sign_in
-# from auth.sign_up import sign_up
-# from auth.authentication import authentication
-# from create_news import create_news
-# from list_news import list_news
-# from edit_news import edit_news
-# from printed_version import printed_version
+from auth.sign_in import sign_in
+from auth.sign_up import sign_up
+from auth.authentication import authentication
 
-# Inicializar o estado da sessão
+
 if not 'authenticated' in st.session_state:
     st.session_state.authenticated = False
 
-# Função principal para gerenciar a navegação
 def main():
     st.set_page_config(
         page_title="Jornal Sócrates",
@@ -37,13 +31,7 @@ def main():
                     Nosso time de suporte está disponível de segunda a sexta das 9h às 18h (horário de Brasília) através do e-mail `contato@socratesdata.com`
                     ''')
     with col2:
-        st.text('09')
-        # authentication()
-        # col21, col22 = st.columns(2)
-        # with col21:
-        #     sign_up()
-        # with col22:
-        #     sign_in()
+        authentication()
     
 
 if __name__ == "__main__":
