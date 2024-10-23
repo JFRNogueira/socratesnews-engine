@@ -1,10 +1,6 @@
 import streamlit as st
 from usuarios.usuario_criar import usuario_criar
 
-from dotenv import load_dotenv
-import os
-load_dotenv()
-API_URL = os.getenv("API_URL")
 
 def main():
     st.set_page_config(
@@ -27,8 +23,7 @@ def main():
         menu_option = st.sidebar.radio("Selecione a opção", options)
 
         if menu_option == "Criar":
-            st.header(API_URL)
-            # usuario_criar()
+            usuario_criar()
         elif menu_option == "Editar":
             st.warning("Em construção", icon='🏗️')
         # if menu_option == "Listar":
