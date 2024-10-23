@@ -22,6 +22,7 @@ def main():
         initial_sidebar_state="expanded",
     )
     options = ['RPA', 'Fontes pendentes', 'Mundo', 'Brasil', 'C&T', 'Economia', 'Entretenimento', 'Esporte', 'Oração', 'Infantil', 'Previsões', 'Classificados']
+    options = ['Mundo']
     
     if (not 'user' in st.session_state) or (not 'journalist' in st.session_state['user']['roles']):
         st.header('Jornalista', divider=True)
@@ -33,26 +34,26 @@ def main():
         st.sidebar.title("Menu")
         menu_option = st.sidebar.radio("Selecione a opção", options)
 
-        if menu_option == "RPA":
-            rpa()
-        if menu_option == "Fontes pendentes":
-            fontes_pendentes()
+        # if menu_option == "RPA":
+        #     rpa()
+        # if menu_option == "Fontes pendentes":
+        #     fontes_pendentes()
         if menu_option == "Mundo":
             mundo()
-        if menu_option == "Brasil":
-            brasil()
-        if menu_option == "C&T":
-            cet()
-        if menu_option == "Economia":
-            economia()
-        if menu_option == "Entretenimento":
-            entretenimento()
-        if menu_option == "Esporte":
-            esporte()
-        if menu_option == "Infantil":
-            infantil()
-        if menu_option == "Previsões":
-            previsoes()
+        # if menu_option == "Brasil":
+        #     brasil()
+        # if menu_option == "C&T":
+        #     cet()
+        # if menu_option == "Economia":
+        #     economia()
+        # if menu_option == "Entretenimento":
+        #     entretenimento()
+        # if menu_option == "Esporte":
+        #     esporte()
+        # if menu_option == "Infantil":
+        #     infantil()
+        # if menu_option == "Previsões":
+        #     previsoes()
 
 if __name__ == "__main__":
     main()

@@ -1,8 +1,4 @@
-import time
 import streamlit as st
-import pandas as pd
-import requests
-from bs4 import BeautifulSoup
 from bot_jornalista.writer_news import WriterNews
 from sources.google_news import GoogleNews, GoogleNewsCluster
 from streamlit_image_select import image_select
