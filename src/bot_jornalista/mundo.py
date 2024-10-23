@@ -1,6 +1,6 @@
 import streamlit as st
-from bot_jornalista.writer_news import WriterNews
-from sources.google_news import GoogleNews, GoogleNewsCluster
+# from bot_jornalista.writer_news import WriterNews
+# from sources.google_news import GoogleNews, GoogleNewsCluster
 from streamlit_image_select import image_select
 
 
@@ -14,7 +14,8 @@ def mundo():
         
         # Look for references in Google News
         if st.button("Buscar temas no Google News"):
-            GoogleNews(['Mundo'])
+            st.markdown("Buscando temas no Google News...")
+            # GoogleNews(['Mundo'])
             
         # If references are loaded
         if 'mundo_themes' in st.session_state:
@@ -41,18 +42,19 @@ def mundo():
             
             if 'mundo_themes_selection' in st.session_state and (st.session_state['mundo_themes_selection']['create'] == True).sum() > 0:
                 if st.button("Buscar fontes para notícias"):
-                    GoogleNewsCluster(['Mundo']).get_all_references()
+                    st.markdown("Buscando fontes para notícias...")
+                    # GoogleNewsCluster(['Mundo']).get_all_references()
                 
             if any(f'mundo_news_{i}_image_text' in st.session_state for i in range(1, 10)):
                 if st.button(f"Gerar todas as notícias"):
                     for i in range(1, 20):
                         if f'mundo_news_{i}_image_text' in st.session_state:
                             selection = st.session_state[f'mundo_news_{i}_reference_news_selected']
-                            st.session_state[f'mundo_news_{i}_final'] = WriterNews('Mundo', 
-                                selection[selection['source'] == True]['text'].tolist(),
-                                selection[selection['source'] == True]['title'].tolist(),
-                                st.session_state[f'mundo_news_{i}_image_url'],
-                                st.session_state[f'mundo_news_{i}_image_text'])
+                            # st.session_state[f'mundo_news_{i}_final'] = WriterNews('Mundo', 
+                            #     selection[selection['source'] == True]['text'].tolist(),
+                            #     selection[selection['source'] == True]['title'].tolist(),
+                            #     st.session_state[f'mundo_news_{i}_image_url'],
+                            #     st.session_state[f'mundo_news_{i}_image_text'])
 
                         
 
@@ -126,11 +128,11 @@ def mundo():
                             if st.button(f'Gerar notícia {n_tab}'):
                                 if f'mundo_news_{n_tab}_image_text' in st.session_state:
                                     selection = st.session_state[f'mundo_news_{n_tab}_reference_news_selected']
-                                    st.session_state[f'mundo_news_{n_tab}_final'] = WriterNews('Mundo', 
-                                        selection[selection['source'] == True]['text'].tolist(),
-                                        selection[selection['source'] == True]['title'].tolist(),
-                                        st.session_state[f'mundo_news_{i}_image_url'],
-                                        st.session_state[f'mundo_news_{i}_image_text'])
+                                    # st.session_state[f'mundo_news_{n_tab}_final'] = WriterNews('Mundo', 
+                                    #     selection[selection['source'] == True]['text'].tolist(),
+                                    #     selection[selection['source'] == True]['title'].tolist(),
+                                    #     st.session_state[f'mundo_news_{i}_image_url'],
+                                    #     st.session_state[f'mundo_news_{i}_image_text'])
                                     
                             
                             
