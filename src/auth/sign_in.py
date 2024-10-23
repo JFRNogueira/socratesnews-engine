@@ -9,7 +9,7 @@ import time
 
 def sign_in_service(email, uid):
     try:
-        API_URL = f'http://localhost:3000/api/useruid/{uid}'
+        API_URL = f'https://socratesnews-dev-1aaab5bd4746.herokuapp.com/api/useruid/{uid}'
         payload = {
             'supportUid': 'aKwP8Bwx34fW18Rkqr4u31uYoQ23',
             'uid': uid,

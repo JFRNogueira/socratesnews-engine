@@ -22,20 +22,14 @@ def main():
         page_icon="📰",
         layout="wide",
         initial_sidebar_state="expanded",
-        menu_items={
-            'Get Help': 'https://www.extremelycoolapp.com/help',
-            'Report a bug': "https://www.extremelycoolapp.com/bug",
-            'About': "# This is a header. This is an *extremely* cool app!"
-        }
     )
     options = ['RPA', 'Fontes pendentes', 'Mundo', 'Brasil', 'C&T', 'Economia', 'Entretenimento', 'Esporte', 'Oração', 'Infantil', 'Previsões', 'Classificados']
     
-    
-    if 'journalist' in st.session_state['user']['roles']:
+    if (not 'user' in st.session_state) or (not 'journalist' in st.session_state['user']['roles']):
         st.header('Jornalista', divider=True)
         st.markdown('Área exclusiva para uso de jornalistas e conta com funcionalidades auxiliares à postagem de notícias.')
-        st.warning("Acesso negado. Para ter acesso, entre em contato com o suporte através do e-mail `contato@socratesdata.com`.")
-        st.stop()  # Impede o restante da página de ser exibido
+        st.warning("Acesso negado. Para ter acesso, entre em contato com o suporte através do e-mail `contato@socratesdata.com`.", icon='⛔')
+        st.stop()
         
     else:
         st.sidebar.title("Menu")
