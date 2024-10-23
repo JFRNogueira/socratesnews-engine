@@ -1,5 +1,6 @@
 import streamlit as st
 # from bot_jornalista.writer_news import WriterNews
+from sources.google_news import GoogleNews
 # from sources.google_news import GoogleNews, GoogleNewsCluster
 from streamlit_image_select import image_select
 
@@ -15,7 +16,7 @@ def mundo():
         # Look for references in Google News
         if st.button("Buscar temas no Google News"):
             st.markdown("Buscando temas no Google News...")
-            # GoogleNews(['Mundo'])
+            GoogleNews(['Mundo'])
             
         # If references are loaded
         if 'mundo_themes' in st.session_state:

@@ -1,4 +1,11 @@
-streamlit
+bs4
 openai
+os
+pandas
+pyperclip
+requests
+selenium
 streamlit
 streamlit_image_select
+time
+webdriver_manager
