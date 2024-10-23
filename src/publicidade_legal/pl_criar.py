@@ -11,7 +11,7 @@ import requests
 
 def create_pl(payload):
     try:
-        API_URL = f'http://localhost:3000/api/news'
+        API_URL = f'https://socratesnews-dev-1aaab5bd4746.herokuapp.com/api/news'
         res = requests.post(API_URL, json=payload)
     except:
         return False

@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 
 def get_section_service():
-    API_URL = 'http://localhost:3000/api/section/alldata'
+    API_URL = 'https://socratesnews-dev-1aaab5bd4746.herokuapp.com/api/section/alldata'
     response = requests.get(API_URL)
     if response.status_code == 200:
         data = response.json()  # Converte o corpo da resposta em JSON
@@ -17,7 +17,7 @@ def get_section_service():
 
 def update_section_service(df):
     try:
-        API_URL = 'http://localhost:3000/api/section'
+        API_URL = 'https://socratesnews-dev-1aaab5bd4746.herokuapp.com/api/section'
         for index, row in df.iterrows():
             payload = {
                 'supportUid': 'aKwP8Bwx34fW18Rkqr4u31uYoQ23',
