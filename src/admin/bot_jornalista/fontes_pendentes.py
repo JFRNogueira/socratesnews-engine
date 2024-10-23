@@ -18,10 +18,17 @@ def fontes_pendentes():
     src_df['date'] = src_df['ts'].dt.date
     src_df['src'] = src_df['url'].str.split('/').str[2]
     chart_df = src_df.groupby('src').size().reset_index(name='count')
+    
     chart_df.sort_values('count', ascending=False, inplace=True)
     st.dataframe(chart_df)
-
-
+    chart_df.index = range(len(chart_df))
+    st.write(chart_df)
+    chart_df2 = pd.DataFrame(chart_df)
+    
+    
+    
+    
+    st.bar_chart(data=chart_df2, x='src', y='count', x_label='Fonte dos dados', y_label='# ocorrências', horizontal=True, stack=False)
 
 if __name__ == '__main__':
     fontes_pendentes()

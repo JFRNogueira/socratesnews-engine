@@ -19,6 +19,7 @@ def create_section_service():
         'uid': 'aKwP8Bwx34fW18Rkqr4u31uYoQ23',
         "sectionName": st.session_state['section_name'],
         "priority": st.session_state['section_priority'],
+        "active": st.session_state['section_active'],
         "fromDate": data_from_str,
         "toDate": data_to_str
     }
@@ -37,6 +38,7 @@ def secao_criar():
         
         with col11:
             st.text_input('Nome', help='Nome que será exibido para no app', key='section_name')
+            st.checkbox('Ativar', help='Seção estará ativa após a criação', key='section_active')
         
         with col12:
             st.date_input('De', help='Data inicial de apresentação da seção no Jornal', key='section_from_date')

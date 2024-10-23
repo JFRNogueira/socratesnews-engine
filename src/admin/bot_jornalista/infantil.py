@@ -10,7 +10,25 @@ import time
 from bot_jornalista.infantil_sec import InfantilThemes, InfantilSec
 
 
+def get_child_theme(date_str, options):
+    # Adicionar a opção "Personalizar"
+    options.append("Personalizar")
+    # options = ["Opção 1", "Opção 2", "Opção 3", "Personalizar"]
 
+    # Cria o selectbox
+    st.selectbox("Escolha uma opção", options, key=f'infantil_news_{date_str}')
+
+    # Verifica se a opção "Personalizar" foi selecionada
+    if selected_option == "Personalizar":
+        # Abre um campo de input para valor personalizado
+        custom_value = st.text_input("Digite seu valor personalizado")
+        
+        # Exibe o valor personalizado na tela (para confirmar)
+        if custom_value:
+            st.write(f"Valor personalizado: {custom_value}")
+    else:
+        # Caso contrário, exibe a opção escolhida
+        st.write(f"Opção selecionada: {selected_option}")
 
 
 

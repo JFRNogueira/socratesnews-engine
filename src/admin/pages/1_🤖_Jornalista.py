@@ -18,8 +18,8 @@ from bot_jornalista.esporte import esporte
 
 def main():
     st.set_page_config(
-        page_title="Gerador de Notícias",
-        page_icon="🤖",
+        page_title="Jornal Sócrates",
+        page_icon="📰",
         layout="wide",
         initial_sidebar_state="expanded",
         menu_items={
@@ -30,9 +30,13 @@ def main():
     )
     options = ['RPA', 'Fontes pendentes', 'Mundo', 'Brasil', 'C&T', 'Economia', 'Entretenimento', 'Esporte', 'Oração', 'Infantil', 'Previsões', 'Classificados']
     
-    if st.session_state.authenticated:
-    # if not st.session_state.authenticated:
-        login()
+    
+    if 'journalist' in st.session_state['user']['roles']:
+        st.header('Jornalista', divider=True)
+        st.markdown('Área exclusiva para uso de jornalistas e conta com funcionalidades auxiliares à postagem de notícias.')
+        st.warning("Acesso negado. Para ter acesso, entre em contato com o suporte através do e-mail `contato@socratesdata.com`.")
+        st.stop()  # Impede o restante da página de ser exibido
+        
     else:
         st.sidebar.title("Menu")
         menu_option = st.sidebar.radio("Selecione a opção", options)
