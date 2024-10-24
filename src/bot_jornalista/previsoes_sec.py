@@ -7,6 +7,7 @@ import os
 from bs4 import BeautifulSoup
 from datetime import datetime
 import random
+import streamlit as st
 
 load_dotenv()
 
@@ -83,7 +84,7 @@ class HoroscopoSec:
 
 
     def save_horoscope(self, sign, prediction, reference):
-        API_URL = 'https://socratesnews-dev-1aaab5bd4746.herokuapp.com/api/news'
+        API_URL = f'{st.secrets['API_URL']}api/news'
         
         payload1 = {
             "uid": "aKwP8Bwx34fW18Rkqr4u31uYoQ23",

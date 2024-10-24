@@ -4,7 +4,7 @@ import pandas as pd
 import requests
 
 def get_news_view(page=1):
-    API_URL = f'https://socratesnews-dev-1aaab5bd4746.herokuapp.com/api/news?page={page}'
+    API_URL = f'{st.secrets['API_URL']}api/news?page={page}'
     response = requests.get(API_URL)
     result = pd.DataFrame(response.json())
     result['newsUrl'] = 'https://dev.jornalsocrates.com.br/noticia/' + result["newsId"]

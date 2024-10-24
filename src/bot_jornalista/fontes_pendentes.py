@@ -11,7 +11,7 @@ import re
 
 
 def fontes_pendentes():
-    file_src = 'src/admin/bot_jornalista/not_found_url_reader.csv'
+    file_src = 'src/bot_jornalista/not_found_url_reader.csv'
     
     src_df = pd.read_csv(file_src)
     src_df['ts'] = pd.to_datetime(src_df['ts'])

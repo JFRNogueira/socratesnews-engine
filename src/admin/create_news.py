@@ -5,7 +5,7 @@ import requests
 from datetime import datetime
 
 def get_sections():
-    API_URL = f'https://socratesnews-dev-1aaab5bd4746.herokuapp.com/api/section'
+    API_URL = f'{st.secrets['API_URL']}api/section'
     response = requests.get(API_URL)
     sections = []
     for section in response.json():
@@ -15,7 +15,7 @@ def get_sections():
 
 
 def publish(title, section, imageSource, imageUrl, publishAtDate, publishAtTime, summary, body, tags):
-    API_URL = f'https://socratesnews-dev-1aaab5bd4746.herokuapp.com/api/news'
+    API_URL = f'{st.secrets['API_URL']}api/news'
     data = datetime(publishAtDate.year, publishAtDate.month, publishAtDate.day, publishAtTime.hour, publishAtTime.minute, 0, 0)
     formatted_date = data.strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3] + "+00:00"
     payload = {
@@ -36,7 +36,7 @@ def publish(title, section, imageSource, imageUrl, publishAtDate, publishAtTime,
     return response.status_code, response.json()['newsId']
 
 def open_news(newsId):
-    js = f"<script>window.open('https://dev.jornalsocrates.com.br/noticia/{newsId}');</script>"
+    js = f"<script>window.open('https://jornalsocrates.com.br/noticia/{newsId}');</script>"
     st.markdown(js, unsafe_allow_html=True)
 
 def create_news():

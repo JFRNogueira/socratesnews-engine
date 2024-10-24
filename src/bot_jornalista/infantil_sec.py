@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 import requests
 import os
 import json
+import streamlit as st
 
 load_dotenv()
 
@@ -122,7 +123,7 @@ class InfantilSec:
 
 
     def save_news(self):
-        API_URL = 'https://socratesnews-dev-1aaab5bd4746.herokuapp.com/api/news'
+        API_URL = f'{st.secrets['API_URL']}api/news'
         
         payload1 = {
             "uid": "aKwP8Bwx34fW18Rkqr4u31uYoQ23",

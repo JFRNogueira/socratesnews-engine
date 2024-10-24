@@ -2,6 +2,7 @@ import requests
 import openai
 import os
 from selenium.webdriver.support import expected_conditions as EC
+import streamlit as st
 
 
 class WriterNews:
@@ -120,7 +121,7 @@ class WriterNews:
 
     def save_news(self):
         try:
-            url = f'https://socratesnews-dev-1aaab5bd4746.herokuapp.com/api/news'
+            url = f'{st.secrets['API_URL']}api/news'
             payload = {
                 "uid": "aKwP8Bwx34fW18Rkqr4u31uYoQ23",
                 "supportUid": "aKwP8Bwx34fW18Rkqr4u31uYoQ23",

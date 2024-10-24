@@ -112,8 +112,8 @@ class News:
         if 'folha.uol.com.br' in self.url:
             newsdata = FolhaUol(self.soup)
             return 'folhauol', newsdata
-        if 'gazetadopovo.com.br' in self.url:
-            newsdata = GazetaDoPovo(self.soup)
+        # if 'gazetadopovo.com.br' in self.url:
+        #     newsdata = GazetaDoPovo(self.soup)
             return 'gazetadopovo', newsdata
         if 'ge.globo.com' in self.url:
             newsdata = G1(self.soup)
@@ -193,7 +193,7 @@ class News:
         if 'windowsclub.com.br' in self.url:
             newsdata = WindowsClub(self.soup)
             return 'windowsclub', newsdata
-        with open('src/admin/bot_jornalista/not_found_url_reader.csv', mode="a", newline='') as file:
+        with open('src/bot_jornalista/not_found_url_reader.csv', mode="a", newline='') as file:
             writer = csv.DictWriter(file, fieldnames=["ts", "url"])
             if file.tell() == 0:
                 writer.writeheader()

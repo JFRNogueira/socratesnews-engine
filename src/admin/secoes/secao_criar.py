@@ -5,8 +5,7 @@ from datetime import datetime
 
 
 def create_section_service():
-    API_URL = f'https://socratesnews-dev-1aaab5bd4746.herokuapp.com/api/section'
-    API_URL = f'https://socratesnews-dev-1aaab5bd4746.herokuapp.com/api/section'
+    API_URL = f'{st.secrets['API_URL']}api/section'
     
     data_from = st.session_state['section_from_date']
     data_from_str = datetime(data_from.year, data_from.month, data_from.day, 0, 0, 0, 0).strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3] + "+00:00"

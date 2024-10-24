@@ -8,7 +8,7 @@ import time
 
 
 def sign_up_service(name, email):
-    API_URL = f'https://socratesnews-dev-1aaab5bd4746.herokuapp.com/api/user'
+    API_URL = f'{st.secrets['API_URL']}api/user'
     payload = {
         'name': name,
         'email': email,

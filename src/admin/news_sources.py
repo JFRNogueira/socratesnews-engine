@@ -203,7 +203,7 @@ class GoogleNews:
 
     def save_news(self):
         try:
-            url = f'{API_URL}/api/news'
+            url = f'{API_URL}api/news'
             payload = {
                 "uid": "johannesadmin",
                 "supportUid": "johannesadmin",
