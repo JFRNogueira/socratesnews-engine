@@ -135,7 +135,64 @@ class HoroscopoSec:
         result = []
         for s in signos:
             reference = self.get_horoscope_prediction(s["reference"])
-            content = f'Qual o horóscopo de {s["name"].lower()} para hoje? Escreva um texto entre 100 e 120 palavras que será publicado em um jornal. Se necessário, considere a referêcia existente em alguns sites de prestígio \n\n{reference}\n\nComece com: "{s["name"]}, {random.choice(startWith)}"'
+            content = f'Qual o horóscopo de {s["name"].lower()} para hoje? Escreva um texto entre 35 e 40 palavras que será publicado em um jornal. Se necessário, considere a referêcia existente em alguns sites de prestígio \n\n{reference}\n\nComece com: "{s["name"]}, {random.choice(startWith)}"'
+            message = [{
+                'role': 'user',
+                'content': content
+            }]
+            
+            client = openai.Client(api_key=os.getenv("OPENAI_API_KEY"))
+            response = client.chat.completions.create(
+                messages=message, 
+                model="gpt-4o-mini", 
+                max_tokens=1000, 
+                temperature=0, 
+                )
+            prediction = response.choices[0].message.content
+            self.save_horoscope(s["name"], prediction, s["reference"])
+            result.append({"sign": s["name"], "prediction": prediction})
+        
+        return result
+
+
+
+    def create_one_daily_horoscope(self, sign):
+        signos_list = [
+            {"name": "Áries", "fromTo": "21-mar a 20-abr", "reference": "aries"},
+            {"name": "Touro", "fromTo": "21-abr a 20-mai", "reference": "touro"},
+            {"name": "Gêmeos", "fromTo": "21-mai a 20-jun", "reference": "gemeos"},
+            {"name": "Câncer", "fromTo": "21-jun a 21-jul", "reference": "cancer"},
+            {"name": "Leão", "fromTo": "22-jul a 22-ago", "reference": "leao"},
+            {"name": "Virgem", "fromTo": "23-ago a 22-set", "reference": "virgem"},
+            {"name": "Libra", "fromTo": "23-set a 22-out", "reference": "libra"},
+            {"name": "Escorpião", "fromTo": "23-out a 21-nov", "reference": "escorpiao"},
+            {"name": "Sagitário", "fromTo": "22-nov a 21-dez", "reference": "sagitario"},
+            {"name": "Capricórnio", "fromTo": "22-dez a 20-jan", "reference": "capricornio"},
+            {"name": "Aquário", "fromTo": "21-jan a 19-fev", "reference": "aquario"},
+            {"name": "Peixes", "fromTo": "20-fev a 20-mar", "reference": "peixes"}
+        ]
+        
+        # filtrar elemento no qual reference == sign
+        signos = list(filter(lambda x: x['name'] == sign, signos_list))
+        
+        startWith = [
+            "hoje",
+            "aproveite o momento para",
+            "concentre-se em",
+            "é o momento perfeito para",
+            "preste atenção",
+            "busque o equilíbrio em suas relações e tome decisões ponderadas.",
+            "um período de",
+            "novas aventuras e oportunidades estão prestes a surgir.",
+            "trabalhe com",
+            "sua",
+            "permita-se",
+        ]
+        
+        result = []
+        for s in signos:
+            reference = self.get_horoscope_prediction(s["reference"])
+            content = f'Qual o horóscopo de {s["name"].lower()} para hoje? Escreva um texto entre 35 e 40 palavras que será publicado em um jornal. Se necessário, considere a referêcia existente em alguns sites de prestígio \n\n{reference}\n\nComece com: "{s["name"]}, {random.choice(startWith)}"'
             message = [{
                 'role': 'user',
                 'content': content

@@ -33,7 +33,7 @@ from sources.o_tempo import OTempo
 from sources.o_vicio import OVicio
 from sources.poder360 import Poder360
 from sources.r7 import R7
-from sources.series_do_momento import SeriesDoMomento
+# from sources.series_do_momento import SeriesDoMomento
 from sources.tecmundo import TecMundo
 from sources.terra import Terra
 from sources.trivela import Trivela
@@ -59,10 +59,13 @@ class News:
 
     def get_html(self):
         browsers = {'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome / 86.0.4240.198Safari / 537.36"}
-        html_content = requests.get(self.url, headers = browsers, timeout=20)
-        text = html_content.content.decode('utf-8', errors='ignore')
-        soup = BeautifulSoup(text, 'html.parser')
-        return soup
+        try:
+            html_content = requests.get(self.url, headers = browsers, timeout=20)
+            text = html_content.content.decode('utf-8', errors='ignore')
+            soup = BeautifulSoup(text, 'html.parser')
+            return soup
+        except:
+            return ''
 
 
 
@@ -114,7 +117,7 @@ class News:
             return 'folhauol', newsdata
         # if 'gazetadopovo.com.br' in self.url:
         #     newsdata = GazetaDoPovo(self.soup)
-            return 'gazetadopovo', newsdata
+        #     return 'gazetadopovo', newsdata
         if 'ge.globo.com' in self.url:
             newsdata = G1(self.soup)
             return 'geglobo', newsdata
@@ -133,9 +136,9 @@ class News:
         if 'infomoney.com.br' in self.url:
             newsdata = InfoMoney(self.soup)
             return 'infomoney', newsdata
-        if 'jovempan.com.br' in self.url:
-            newsdata = JovemPan(self.soup)
-            return 'jovempan', newsdata
+        # if 'jovempan.com.br' in self.url:
+        #     newsdata = JovemPan(self.soup)
+        #     return 'jovempan', newsdata
         if 'metropoles.com' in self.url:
             newsdata = Metropoles(self.soup)
             return 'metropoles', newsdata
@@ -160,9 +163,9 @@ class News:
         if 'r7.com' in self.url:
             newsdata = R7(self.soup)
             return 'r7', newsdata
-        if 'seriesdomomento.com.br' in self.url:
-            newsdata = SeriesDoMomento(self.soup)
-            return 'seriesdomomento', newsdata
+        # if 'seriesdomomento.com.br' in self.url:
+        #     newsdata = SeriesDoMomento(self.soup)
+        #     return 'seriesdomomento', newsdata
         if 'tecmundo.com.br' in self.url:
             newsdata = TecMundo(self.soup)
             return 'tecmundo', newsdata

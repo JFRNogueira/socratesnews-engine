@@ -1,0 +1,307 @@
+\documentclass{minimal} % Classe básica para documentos simples.
+
+\usepackage{lipsum}     % Gera texto de exemplo.
+\usepackage{graphicx}   % Manipula imagens.
+\usepackage{tikz}       % Cria gráficos e diagramas.
+\usepackage{xcolor}     % Permite uso de cores.
+\usepackage{qrcode}     % Gera códigos QR.
+\usepackage{adjustbox}  % Redimensiona e alinha elementos.
+\usepackage{multicol}   % Cria múltiplas colunas.
+\usepackage{paracol}    % Colunas paralelas com mais controle.
+\usepackage{wrapfig}    % Insere figuras com texto ao redor.
+\usepackage{caption}    % Customiza legendas.
+\usepackage{float}      % Controla posicionamento de figuras/tabelas.
+\usepackage{fix-cm}     % Usa fontes escaláveis.
+
+\usepackage{fancyhdr}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\pagestyle{fancy}
+\fancyhf{} % Limpa cabeçalhos e rodapés
+
+
+\usepackage[a4paper, left=0cm, right=1.5cm, top=0.5cm, bottom=0.5cm]{geometry} % Define tamanho do papel e margens.
+% Define espaçamento entre colunas
+\setlength{\columnsep}{0.5cm} 
+
+% Definir as cores
+\definecolor{primarycolor}{HTML}{24249A}
+\definecolor{secondarycolor}{HTML}{6C93D2}
+
+% Definindo os parâmetros
+\newcommand{\h}[1]{{\bfseries\fontsize{22}{24}\selectfont #1}}
+\newcommand{\hh}[1]{{\bfseries\fontsize{16}{18}\selectfont #1}}
+
+
+
+% Cabeçalhos
+% ANO, NÚMERO DA EDIÇÃO, DATA COMPLETA, NÚMERO DE PÁGINA, SEÇÃO
+\newcommand{\frontpageheaderVA}[5]{
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=west, text=black, xshift=0.5cm, yshift=-0.9cm] at (current page.north west) {Desde novembro de 2024};
+        \filldraw[fill=secondarycolor, draw=none]
+        ([xshift=-5.5cm, yshift=-1.3cm]current page.north east) rectangle ++(5cm, 0.8cm);
+        \node[anchor=center, text=white, xshift=-3cm, yshift=-0.9cm] at (current page.north east) {Ano #1 | Nº #2};
+        \filldraw[fill=primarycolor, draw=none] 
+        ([xshift=0.5cm, yshift=-1.3cm]current page.north west) rectangle ([xshift=-0.5cm, yshift=-4.3cm]current page.north east);
+        \node[anchor=center, align=center, text=white, xshift=3cm, yshift=-2.8cm] at (current page.north west) {\parbox{4cm}{\centering \textit{``E conhecereis a verdade, e a verdade vos libertará.''} \\ João 8:32}};
+        \node[anchor=center, align=center, text=white, xshift=-3cm, yshift=-2.8cm] at (current page.north east) {\parbox{4cm}{
+            \centering Editor chefe\\ Johannes Nogueira \\
+            \vspace{0.2cm}
+            \qrcode[height=1.5cm]{https://jornalsocrates.com.br}
+        }};
+        \node[anchor=center, text=black, yshift=-2.8cm] at (current page.north) {\includegraphics[height=2cm]{../../images/logo.png}};
+        \node[anchor=center, yshift=-4.8cm] at (current page.north) {\makebox[\textwidth]{\centering \textcolor{primarycolor}{\textbf{#3 Anno Domini Nostri Iesu Christi}}}};
+        \node[anchor=east, xshift=-0.5cm, yshift=-4.8cm] at (current page.north east) {\makebox{\textcolor{primarycolor}{\textbf{R\$1,99}}}};
+        \filldraw[fill=black, draw=none] 
+        ([xshift=0.5cm, yshift=-5.3cm]current page.north west) rectangle ([xshift=-0.5cm, yshift=-5.4cm]current page.north east);
+        \filldraw[fill=primarycolor, draw=none] 
+        ([xshift=0.5cm, yshift=-5.6cm]current page.north west) rectangle ([xshift=-0.5cm, yshift=-5.8cm]current page.north east);
+    \end{tikzpicture}
+}
+
+\newcommand{\frontpageheaderVApar}[5]{
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=west, text=primary, xshift=0.5cm, yshift=-0.9cm] at (current page.north west) {#4};
+        \draw[thick] ([xshift=1.3cm, yshift=-0.7cm]current page.north west) -- ([xshift=1.3cm, yshift=-1.1cm]current page.north west);
+        \node[anchor=west, text=primary, xshift=1.5cm, yshift=-0.9cm] at (current page.north west) {#5};
+        \node[anchor=east, text=black, xshift=-3.4cm, yshift=-0.9cm] at (current page.north east) {\makebox[5cm]{#3}};
+        \node[anchor=east, xshift=-0.9cm, yshift=-0.9cm] at (current page.north east) {\includegraphics[height=0.6cm]{images/logo_black.png}};
+        \draw[thick] ([xshift=-3.2cm, yshift=-0.7cm]current page.north east) -- ([xshift=-3.2cm, yshift=-1.1cm]current page.north east);
+        \filldraw[fill=black, draw=none] 
+        ([xshift=0.5cm, yshift=-1.4cm]current page.north west) rectangle ([xshift=-0.5cm, yshift=-1.5cm]current page.north east);
+        \filldraw[fill=primary, draw=none] 
+        ([xshift=0.5cm, yshift=-1.6cm]current page.north west) rectangle ([xshift=-0.5cm, yshift=-1.8cm]current page.north east);
+    \end{tikzpicture}
+}
+
+
+
+% Rodapés
+\newcommand{\frontpagefooterVA}{
+    \begin{tikzpicture}[remember picture, overlay]
+        \draw[thick] ([xshift=-0.5\textwidth, yshift=0.5cm]current page.south) -- ([xshift=0.5\textwidth, yshift=0.5cm]current page.south);
+        \draw[thick] ([xshift=-0.5\textwidth, yshift=2cm]current page.south) -- ([xshift=0.5\textwidth, yshift=2cm]current page.south);
+        \node[anchor=west, xshift=-0.5\textwidth+0.2cm, yshift=1.25cm] at (current page.south) {\includegraphics[height=1.2cm]{../../images/logo_s.png}};
+        \node[anchor=west, xshift=-8cm, yshift=1.25cm] at (current page.south) 
+        {\parbox{13cm}{
+        O Jornal Sócrates foi criado com uma missão maior, a de espalhar a Verdade e fomentar discussões frutíferas porque, como dizia Sócrates, \textit{"As opiniões não são verdades, pois não resistem ao diálogo crítico."}
+        }};
+        \draw[thick] ([xshift=5.5cm, yshift=1.8cm]current page.south) -- ([xshift=5.5cm, yshift=0.7cm] current page.south);
+        \node[anchor=east, xshift=0.5\textwidth, yshift=1.25cm] at (current page.south) {\parbox{4cm}{\centering Quer anunciar?\\contato@socratesdata.com}};
+    \end{tikzpicture}
+}
+
+\newcommand{\newspagefooterVA}{
+    \begin{tikzpicture}[remember picture, overlay]
+        \draw[thick] ([xshift=-0.5\textwidth, yshift=0.5cm]current page.south) -- ([xshift=0.5\textwidth, yshift=0.5cm]current page.south);
+    \end{tikzpicture}
+}
+
+
+
+% Modelo de página de notícias capa
+% imagePath, title, summary, text
+\newcommand{\frontpagenewsVAone}[4]{
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=north west, xshift=0.5cm, yshift=-6cm] at (current page.north west) {\includegraphics[width=0.73\textwidth, height=0.73\textwidth]{#1}};
+        \node[anchor=north west, xshift=0.5cm, yshift=-6.5cm-0.73\textwidth] at (current page.north west) {
+            \parbox{0.72\textwidth}{{\hh{#2}}}};
+        \node[anchor=north west, xshift=0.5cm, yshift=-7.7cm-0.73\textwidth] at (current page.north west)
+        {\textcolor{primarycolor}{ \rule{0.15\textwidth}{0.1cm}}};
+        \node[anchor=north west, xshift=0.5cm, yshift=-7.5cm-0.73\textwidth] at (current page.north west)  {
+            \parbox{0.72\textwidth}{
+                \begin{multicols}{3}
+                    #4
+                \end{multicols}
+            }
+        };
+        \draw[thick] ([xshift=0.7cm+0.73\textwidth, yshift=-6cm]current page.west) -- ([xshift=0.7cm+0.73\textwidth, yshift=-12.5cm]current page.west);
+    \end{tikzpicture}
+}
+
+\newcommand{\frontpagenewsVAtwo}[4]{
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=north west, xshift=0.5cm+0.75\textwidth, yshift=-6cm] at (current page.north west)
+        {\hh{#2}};
+        \node[anchor=north west, xshift=0.5cm+0.75\textwidth, yshift=-6.6cm] at (current page.north west)
+        {\includegraphics[width=0.25\textwidth, height=0.25\textwidth]{#1}};
+        \node[anchor=north west, xshift=0.5cm+0.75\textwidth, yshift=-6.7cm-0.25\textwidth] at (current page.north west)  {
+            \parbox{0.25\textwidth}{
+            #3}
+        };
+    \end{tikzpicture}
+}
+
+\newcommand{\frontpagenewsVAthree}[4]{
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=north west, xshift=0.5cm+0.75\textwidth, yshift=-8.5cm-0.25\textwidth] at (current page.north west)
+        {\hh{#2}};
+        \node[anchor=north west, xshift=0.5cm+0.75\textwidth, yshift=-9.1cm-0.25\textwidth] at (current page.north west)
+        {\includegraphics[width=0.25\textwidth, height=0.25\textwidth]{#1}};
+        \node[anchor=north west, xshift=0.5cm+0.75\textwidth, yshift=-9.2cm-0.50\textwidth] at (current page.north west)  {
+            \parbox{0.25\textwidth}{
+            #3}
+        };
+    \end{tikzpicture}
+}
+
+\newcommand{\frontpagenewsVAfour}[4]{
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=north west, xshift=0.5cm+0.75\textwidth, yshift=-11cm-0.5\textwidth] at (current page.north west)
+        {\hh{#2}};
+        \node[anchor=north west, xshift=0.5cm+0.75\textwidth, yshift=-11.6cm-0.5\textwidth] at (current page.north west)
+        {\includegraphics[width=0.25\textwidth, height=0.25\textwidth]{#1}};
+        \node[anchor=north west, xshift=0.5cm+0.75\textwidth, yshift=-11.7cm-0.75\textwidth] at (current page.north west)  {
+            \parbox{0.25\textwidth}{
+            #3}
+        };
+    \end{tikzpicture}
+}
+
+
+
+% Modelo de página de notícias VA
+% imagePath, title, summary, text
+\newcommand{\newspageVAone}[4]{
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=north west, xshift=0.5cm, yshift=-4.5cm] at (current page.north west) {\includegraphics[width=0.5\textwidth, height=0.5\textwidth]{#1}};
+        \node[anchor=north west, xshift=0.5cm, yshift=-2cm] at (current page.north west) {
+            \parbox{0.50\textwidth}{{\hh{#2}}}};
+        \node[anchor=north west, xshift=0.5\textwidth+1cm, yshift=-2cm] at (current page.north west)  
+        {\textcolor{primary}{ \rule{0.15\textwidth}{0.1cm}}};
+        \node[anchor=north west, xshift=0.5\textwidth+1cm, yshift=-2cm] at (current page.north west)  {
+            \parbox{0.5\textwidth}{
+                \begin{multicols}{2}
+                    #4
+                \end{multicols}
+            }
+        };
+        \draw[thick] ([xshift=0.5cm]current page.west) -- ([xshift=-0.5cm]current page.east);
+    \end{tikzpicture}
+}
+
+\newcommand{\newspageVAtwo}[4]{
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=north west, xshift=0.5cm, yshift=-2cm] at (current page.west) {\includegraphics[width=0.25\textwidth, height=0.25\textwidth]{#1}};
+        \node[anchor=north west, xshift=0.5cm, yshift=-0.5cm] at (current page.west)         
+            {\parbox{0.75\textwidth}{{\hh{#2}}}};
+        \node[anchor=north west, xshift=0.5cm, yshift=-2.5cm-0.25\textwidth] at (current page.west)  
+            {\parbox{0.25\textwidth}{\textcolor{primary}{ \rule{0.15\textwidth}{0.1cm}}}};
+        \node[anchor=north west, xshift=0.5cm, yshift=-1.5cm] at (current page.west)  {
+            \parbox{0.75\textwidth}{
+                \begin{multicols}{3}
+                \textbf{ } \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+                    #4
+                \end{multicols}
+            }
+        };
+       \draw[thick] ([xshift=-0.25\textwidth-0.5cm, yshift=-0.5cm]current page.east) -- ([xshift=-0.25\textwidth-0.5cm, yshift=1cm]current page.south east);
+    \end{tikzpicture}
+}
+
+\newcommand{\newspageVAthree}[4]{
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=north west, xshift=0.81\textwidth, yshift=-0.5cm] at (current page.west) {\includegraphics[width=0.23\textwidth, height=0.23\textwidth]{#1}};
+        \node[anchor=north west, xshift=0.81\textwidth, yshift=-0.23\textwidth-0.8cm] at (current page.west) {\textcolor{primary}{ \rule{0.15\textwidth}{0.1cm}}};
+        \node[anchor=north west, xshift=0.81\textwidth, yshift=-0.23\textwidth-1.2cm] at (current page.west) {\parbox{0.23\textwidth}{\hh{#2} \\ \newline #3}};
+    \end{tikzpicture}
+}
+
+
+
+% Parâmetros de notícias seguem a seguinte ordem:
+% 1. imagePath
+% 2. title
+% 3. summary
+% 4. text
+
+
+\begin{document}
+
+\frontpageheaderVA
+    {1}
+    {1}
+    {Terça-feira, 21 de agosto de 2024}
+
+\thispagestyle{empty}
+
+\frontpagenewsVAone
+    {./src/printedversion/pages/1/news1.png}
+    {Trump intensifica campanha em comício no Madison Square Garden}
+    {Donald Trump realizou um comício no Madison Square Garden, em Nova York, no último domingo, destacando sua retórica anti-imigração e prometendo deportações em massa. Com as eleições presidenciais se aproximando, a polarização entre ele e Kamala Harris se intensifica, refletindo um cenário político tenso nos Estados Unidos.}
+    {Donald Trump realizou um comício no Madison Square Garden, em Nova York, no último domingo (27), como parte de sua campanha para as eleições presidenciais de 2024. Com apenas uma semana até o dia da votação, o ex-presidente enfatizou sua retórica anti-imigração, prometendo um programa de deportação em massa desde o primeiro dia de um possível novo mandato. Durante seu discurso, Trump afirmou que “os Estados Unidos são um país ocupado”, enquanto seus apoiadores atacavam a vice-presidente Kamala Harris, chamando-a de “anticristo” e “o diabo”.
+
+O evento, que atraiu uma multidão significativa, foi descrito como o lançamento da fase final da campanha de Trump, que busca reverter a derrota de 2020. O ex-presidente, que se apresentou por cerca de 1h20, repetiu suas críticas aos democratas, caracterizando-os como um “inimigo interno” e prometendo restaurar o “sonho americano”. Ele questionou se os americanos estão melhores agora do que há quatro anos, recebendo uma resposta negativa da plateia.
+
+Trump também abordou questões econômicas, prometendo acabar com a inflação e criticando a administração de Harris por sua gestão econômica. Ele se comprometeu a implementar um crédito fiscal para cuidadores familiares, em resposta a propostas semelhantes da vice-presidente. A retórica de Trump, que inclui acusações de que os imigrantes são responsáveis pelas dificuldades econômicas, ecoa sua campanha de 2016, quando usou táticas semelhantes para mobilizar apoio.
+
+O comício foi marcado por uma atmosfera tensa, com protestos do lado de fora, onde os democratas projetavam mensagens como “Trump está desequilibrado” e “Trump elogiou Hitler”. A comparação entre o evento de Trump e uma reunião pró-nazista de 1939 no mesmo local foi feita pelo governador de Minnesota, Tim Walz, que criticou a retórica do ex-presidente.
+
+Enquanto Trump se concentrava em sua base de apoio, Kamala Harris também intensificou sua campanha, visitando estados estratégicos e buscando conquistar eleitores indecisos. A vice-presidente, que se apresenta como uma alternativa ao extremismo de Trump, planeja um comício em Washington, DC, na terça-feira (29), onde destacará a importância da democracia e os riscos de uma presidência de Trump.
+
+Com as pesquisas mostrando uma corrida acirrada, ambos os candidatos estão mirando em estados cruciais, como Pensilvânia e Michigan, onde a votação antecipada já está em andamento. A eleição de 5 de novembro promete ser uma das mais disputadas da história recente dos Estados Unidos, com a possibilidade de contagens tensas e resultados apertados. A retórica inflamatória de Trump e a resposta de Harris refletem a polarização crescente no país, enquanto os eleitores se preparam para decidir o futuro político da nação.}
+
+\frontpagenewsVAtwo
+    {./src/printedversion/pages/1/news2.png}
+    {Cuba enfrenta grave crise energética após apagão histórico e devastação do furacão Oscar}
+    {Cuba enfrenta uma grave crise energética após um apagão que deixou 10 milhões de pessoas sem eletricidade. A situação se agrava com a passagem do furacão Oscar, aumentando a insatisfação popular e os protestos.}
+    {Cuba enfrenta uma grave crise energética após um apagão que deixou cerca de 10 milhões de pessoas sem eletricidade desde a última sexta-feira, 18 de outubro. O colapso do sistema elétrico nacional ocorreu devido a uma falha na usina termelétrica Antonio Guiteras, a maior da ilha, que parou de funcionar por volta das 11h, horário local. O governo cubano anunciou que, na segunda-feira, 21, 56% da capital, Havana, já havia recuperado o fornecimento de energia, e o ministro de Minas e Energia, Vicente de la O Levy, afirmou que a maioria da população teria energia restabelecida até a noite do mesmo dia.
+
+Enquanto aguardam a normalização, os cubanos enfrentam sérios problemas. A falta de eletricidade comprometeu o funcionamento de fogões elétricos, levando muitas famílias a cozinhar com lenha. Além disso, a escassez de energia afetou o abastecimento de água, que depende de bombas elétricas, resultando em dificuldades para higiene e limpeza. O comércio e as escolas foram forçados a fechar, e panelaços e protestos começaram a surgir em várias localidades, incluindo San Miguel del Padrón, um dos bairros mais pobres de Havana.
+
+A situação se agravou ainda mais com a passagem do furacão Oscar, que atingiu a costa leste de Cuba no domingo, 20, causando danos significativos e deixando ao menos sete mortos. O presidente Miguel Díaz-Canel informou que a tempestade causou inundações sem precedentes em algumas áreas, dificultando o acesso a regiões afetadas. O furacão, que foi rebaixado a tempestade tropical, danificou a infraestrutura já precária da ilha, complicando ainda mais a recuperação do sistema elétrico.
+
+O apagão atual é considerado o pior desde o furacão Ian, que atingiu Cuba em 2022. Desde então, a ilha tem enfrentado apagões frequentes, com cortes de energia que, em alguns casos, chegaram a durar até oito horas por dia. O governo atribui a crise energética a uma combinação de fatores, incluindo o embargo econômico imposto pelos Estados Unidos, que dificulta a importação de peças e insumos necessários para a manutenção das usinas. O ministro O Levy também mencionou a crescente demanda por energia, especialmente devido ao uso de aparelhos de ar condicionado, como um dos fatores que contribuíram para a situação.
+
+Além do embargo, a escassez de combustível é apontada como um dos principais problemas. Cuba depende de importações para abastecer suas centrais elétricas, que são em grande parte obsoletas. A crise na Venezuela, um dos principais fornecedores de petróleo da ilha, resultou em uma queda significativa nos envios de combustível, complicando ainda mais a situação. O governo cubano reconheceu que a falta de manutenção e a infraestrutura envelhecida das usinas também são fatores críticos que levaram ao colapso do sistema elétrico.
+
+A insatisfação popular tem crescido, e muitos cubanos expressam sua frustração nas redes sociais e nas ruas. O presidente Díaz-Canel, em um discurso televisionado, pediu que a população se manifestasse de forma civilizada, mas também advertiu que não toleraria atos de vandalismo ou distúrbios. A repressão a protestos é uma preocupação constante, especialmente após as manifestações de julho de 2021, que resultaram em prisões em massa.
+
+Com a energia sendo restaurada lentamente, a situação ainda é crítica. O governo anunciou a suspensão das aulas até quarta-feira, 23, como parte de um esforço para economizar energia. A rede elétrica está sendo dividida em unidades menores para evitar um novo colapso. Apesar dos esforços, a população continua a relatar longos períodos sem eletricidade, e a falta de água e gás agrava ainda mais as dificuldades diárias.
+
+A vida em Havana, uma cidade de 2 milhões de habitantes, foi severamente afetada. Muitos moradores se viram obrigados a improvisar soluções para lidar com a falta de energia, como usar geradores movidos a combustível. A situação é especialmente difícil para famílias com crianças e idosos, que dependem de condições mínimas de conforto e saúde. A falta de alimentos e medicamentos, combinada com a inflação galopante, torna a crise ainda mais insuportável.
+
+Os protestos contra a falta de energia e a escassez de bens essenciais já começaram a se espalhar pelo país. Organizações de direitos humanos relataram pelo menos 28 manifestações desde o início do apagão. A insatisfação popular é palpável, e muitos cubanos estão cada vez mais dispostos a expressar suas queixas, mesmo diante da repressão.
+
+A recuperação do sistema elétrico é uma prioridade para o governo, que enfrenta uma pressão crescente para resolver a crise. No entanto, especialistas alertam que a situação é resultado de anos de má gestão e planejamento inadequado. A falta de investimentos em infraestrutura e a dependência de fontes de energia obsoletas são problemas que precisam ser abordados para evitar que crises semelhantes ocorram no futuro.
+
+Enquanto isso, a população cubana continua a viver em um estado de incerteza, lutando para lidar com as consequências de um apagão histórico e os desafios diários que a crise energética impõe. A esperança de uma solução duradoura parece distante, e muitos temem que a situação possa levar a um descontentamento social ainda maior.}
+
+\frontpagenewsVAthree
+    {./src/printedversion/pages/1/news3.png}
+    {Brics cria nova categoria de associação, exclui Venezuela e convida 13 países para o bloco}
+    {Os países do Brics anunciaram a criação da categoria "Países Parceiros do Brics" e divulgaram uma lista com 13 nações potenciais, excluindo a Venezuela, em um movimento que reflete a influência do Brasil sob Lula.}
+    {Os países do Brics formalizaram nesta quarta-feira, 23 de outubro, a criação de uma nova categoria de associação ao bloco, denominada “Países Parceiros do Brics”, e divulgaram uma lista com 13 países potenciais para essa nova categoria. A Venezuela, que contava com o apoio de Rússia e China, foi excluída da lista, em um movimento que reflete a influência do governo brasileiro sob a liderança de Luiz Inácio Lula da Silva. A Declaração de Kazan, documento final da 16ª cúpula anual de líderes do Brics, destaca o “considerável interesse dos países do Sul Global” em se juntar ao grupo.
+
+O chanceler brasileiro, Mauro Vieira, afirmou que o Brasil não vetou a adesão de novos países, mas diplomatas envolvidos nas negociações indicaram que houve objeções ao ingresso da Venezuela, com instruções vindas de Brasília. A relação entre Brasil e Venezuela tem se deteriorado, especialmente após provocações recentes de Nicolás Maduro, que insinuou que Lula seria um agente da CIA. O Brasil não reconheceu a vitória de Maduro nas eleições presidenciais de julho, que foram marcadas por suspeitas de fraude.
+
+Durante a cúpula, Maduro se reuniu com o presidente russo, Vladimir Putin, e afirmou que a Venezuela “pratica todos os princípios do Brics por convicção”. Ele chegou a Kazan após enviar sua vice-presidente, Delcy Rodríguez, e fez uma visita surpresa para pressionar pela inclusão de seu país no bloco. Putin, por sua vez, reiterou o apoio à candidatura da Venezuela, destacando que o país é um parceiro confiável da Rússia na América Latina.
+
+A lista dos 13 países convidados para a nova categoria inclui Argélia, Belarus, Bolívia, Cuba, Indonésia, Cazaquistão, Malásia, Nigéria, Tailândia, Turquia, Uganda, Uzbequistão e Vietnã. O Brasil manifestou preferência por aprovar dez novos associados e indicou simpatia por candidaturas latino-americanas, como as de Cuba e Bolívia, enquanto se opôs à adesão da Nicarágua, devido ao rompimento de relações com o governo de Daniel Ortega.
+
+O ministro Vieira enfatizou que não deve haver um “aumento desmedido” no número de países associados ao Brics, que não é um bloco formal e não possui uma estrutura de secretariado. Ele destacou que o Brasil não se desengajará do grupo, mas também não vê sua participação como um movimento hostil ao Ocidente. A expansão do Brics tem sido impulsionada principalmente por Rússia e China, que buscam fortalecer um polo alternativo no cenário global.
+
+A cúpula em Kazan também abordou questões geopolíticas, com os líderes do Brics condenando os conflitos no Oriente Médio e no Norte da África, além de expressarem preocupação com as “sanções ilegais” que afetam a economia global. O grupo pediu uma participação mais ativa dos países em desenvolvimento nas estruturas de governança global, enfatizando a necessidade de reforma do Conselho de Segurança da ONU e de instituições financeiras como o FMI.
+
+Lula, que participou da cúpula por videoconferência devido a um acidente doméstico, reiterou a importância do Brics na luta por um mundo multipolar e por relações menos assimétricas entre os países. Ele criticou a desigualdade econômica global e defendeu a criação de um sistema financeiro alternativo ao dólar, propondo um “Mecanismo de Cooperação Interbancária” para facilitar transações em moedas locais entre os países do Brics.
+
+O presidente brasileiro também abordou a questão climática, cobrando dos países ricos o cumprimento de metas de financiamento climático e propondo marcos multilaterais para garantir acesso equitativo a vacinas e tecnologias. Ele condenou a violência em Gaza, chamando a situação de “genocídio do povo palestino”, e pediu negociações de paz para o conflito na Ucrânia, enfatizando a responsabilidade dos países desenvolvidos nas mudanças climáticas.
+
+A cúpula também foi marcada por discussões sobre a necessidade de um sistema de pagamentos alternativo ao Swift, que atualmente é utilizado para transações internacionais e tem sido alvo de sanções. A ideia de substituir o dólar como moeda de referência nas transações comerciais entre os países do Brics foi um tema recorrente nas falas dos líderes, que buscam maior autonomia econômica.
+
+A Arábia Saudita, que foi convidada a se juntar ao Brics, ainda não completou seu processo de adesão, e a cúpula em Kazan foi uma oportunidade para discutir a inclusão de novos membros. A Rússia, que preside o Brics, está interessada em se apresentar como patrocinadora de novos membros, especialmente em um contexto de isolamento internacional devido à guerra na Ucrânia.
+
+A declaração final da cúpula não incluiu a lista de países convidados, uma estratégia para evitar constrangimentos após a Argentina ter declinado do convite para se juntar ao grupo. A cúpula também contou com a presença de 26 convidados, incluindo Maduro, que, apesar de sua exclusão, continuou a se posicionar como parte do Brics.
+
+O futuro do Brics e a inclusão de novos membros dependem de negociações e consensos entre os atuais integrantes, com o Brasil assumindo a presidência rotativa em 2025. A expectativa é que novas pressões surjam sobre a lista de países parceiros, à medida que o bloco busca expandir sua influência no cenário global e fortalecer sua posição como uma alternativa ao domínio ocidental.}
+
+\frontpagenewsVAfour
+    {./src/printedversion/pages/1/news4.png}
+    {Brasil}
+    {A CCJ da Câmara dos Deputados inicia hoje a análise de projeto de anistia}
+    {Teste}
+
+\frontpagefooterVA
+
+\end{document}

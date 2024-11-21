@@ -1,0 +1,28 @@
+{
+    "news": [
+        {
+            "title": "Gilmar Mendes anula atos de Sérgio Moro contra José Dirceu na Lava Jato",
+            "summary": "O ministro Gilmar Mendes, do STF, anulou todos os atos processuais de Sérgio Moro contra o ex-ministro José Dirceu na Lava Jato, permitindo que Dirceu deixe de ser considerado inelegível. A decisão reflete a falta de isenção de Moro e impacta recursos pendentes no STJ.",
+            "text": "O ministro Gilmar Mendes, do Supremo Tribunal Federal (STF), anulou nesta segunda-feira (28) todos os atos processuais do ex-juiz Sérgio Moro contra o ex-ministro José Dirceu (PT) no âmbito da Operação Lava Jato. A decisão, que se baseia em um pedido da defesa de Dirceu, estende os efeitos da suspeição de Moro, reconhecida anteriormente pelo STF, aos processos que envolvem o ex-ministro.\n\nCom essa anulação, Dirceu, que já havia visto uma de suas condenações extintas em maio deste ano, pode agora deixar de ser considerado inelegível. A Segunda Turma do STF já havia decidido, por 3 votos a 2, que a pena de 8 anos e 10 meses imposta a Dirceu por corrupção passiva era inválida, considerando que o crime já estava prescrito na data da condenação, em 2017.\n\nGilmar Mendes argumentou que a falta de isenção de Moro impediu que Dirceu tivesse um julgamento justo. O ministro destacou que há indícios de que Dirceu foi utilizado por Moro como parte de uma estratégia para atingir politicamente o presidente Luiz Inácio Lula da Silva, cujas condenações na Lava Jato também foram anuladas. Mendes afirmou que a condenação de Dirceu serviu como um alicerce para as denúncias contra Lula, evidenciando uma conexão entre os casos.\n\nA decisão de Gilmar Mendes tem impacto direto em dois recursos que ainda aguardam julgamento no Superior Tribunal de Justiça (STJ). A defesa de Dirceu já encaminhou a decisão ao STJ, que agora deve considerar a anulação dos atos processuais de Moro.",
+            "imagePath": "./src/printedversion/pages/3/news1.png"
+        },
+        {
+            "title": "Rogério Andrade, sobrinho de Castor, é preso por assassinato de rival no Rio de Janeiro",
+            "summary": "Rogério Andrade, sobrinho do bicheiro Castor de Andrade, foi preso no Rio de Janeiro como mandante do assassinato de seu rival Fernando Iggnácio. A prisão ocorreu durante a Operação Último Ato, que investiga a disputa pelo controle do jogo do bicho e outras atividades ilícitas.",
+            "text": "O contraventor Rogério Andrade, sobrinho do famoso bicheiro Castor de Andrade, foi preso na manhã desta terça-feira (29) no Rio de Janeiro, acusado de ser o mandante do assassinato de seu rival Fernando Iggnácio. A prisão ocorreu em sua residência, localizada em um condomínio de luxo na Barra da Tijuca, durante a Operação Último Ato, conduzida pelo Grupo de Atuação Especial de Combate ao Crime Organizado (Gaeco) do Ministério Público do Rio de Janeiro (MPRJ).\n\nFernando Iggnácio, que era genro de Castor de Andrade e considerado seu sucessor, foi executado em 10 de novembro de 2020, em uma emboscada no estacionamento de um heliporto no Recreio dos Bandeirantes. Ele foi alvejado por disparos de fuzil logo após desembarcar de um helicóptero. As investigações apontam que Rogério Andrade teria contratado um grupo de matadores de aluguel para realizar o crime, que resultou em uma série de mortes na disputa pelo controle do jogo do bicho e de outros negócios ilícitos.\n\nA rivalidade entre Rogério e Fernando remonta à morte de Castor de Andrade, em 1997, quando a herança do contraventor foi dividida entre Rogério, seu filho Paulo Roberto e Fernando. Paulo Roberto foi assassinado em 1998, e Rogério foi apontado como suspeito do crime. Desde então, a disputa entre os dois se intensificou, resultando em pelo menos 50 mortes entre 1999 e 2007, incluindo policiais que supostamente prestavam serviços para os contraventores.\n\nRogério Andrade já havia sido denunciado anteriormente pelo assassinato de Iggnácio, mas a ação penal foi trancada pelo Supremo Tribunal Federal (STF) em fevereiro de 2022, devido à falta de provas. No entanto, novas investigações levaram à reabertura do caso, com o Gaeco identificando a participação de outros envolvidos no crime, incluindo Gilmar Eneas Lisboa, que foi preso em Duque de Caxias e acusado de monitorar a vítima.",
+            "imagePath": "./src/printedversion/pages/3/news2.png"
+        },
+        {
+            "title": "Evandro Leitão é eleito prefeito de Fortaleza e traz esperança ao PT",
+            "summary": "O deputado Evandro Leitão (PT) foi eleito prefeito de Fortaleza (CE) neste domingo (27), conquistando 50,38 \\% dos votos válidos em uma disputa acirrada contra André Fernandes (PL), que obteve 49,62 p.p. A diferença foi de cerca de 10 mil votos, marcando a única vitória do PT em capitais neste ano.",
+            "text": "O deputado estadual Evandro Leitão (PT) foi eleito prefeito de Fortaleza (CE) neste domingo (27), conquistando 50,38 p.p. dos votos válidos em uma disputa acirrada contra o bolsonarista André Fernandes (PL), que obteve 49,62p.p. A diferença foi de cerca de 10 mil votos, marcando a única vitória do PT em capitais neste ano, após um período sem prefeitos em nenhuma capital desde 2020. A eleição é vista como um alívio para o partido, que enfrentou derrotas em cidades importantes, como Cuiabá e Porto Alegre.",
+            "imagePath": "./src/printedversion/pages/3/news3.png"
+        },
+        {
+            "title": "Brasil",
+            "summary": "A CCJ da Câmara dos Deputados inicia hoje a análise de projeto de anistia",
+            "text": "Teste",
+            "imagePath": "./src/printedversion/pages/1/news4.png"
+        }
+    ]
+}

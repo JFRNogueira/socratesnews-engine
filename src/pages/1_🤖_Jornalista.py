@@ -12,6 +12,8 @@ from bot_jornalista.economia import economia
 from bot_jornalista.entretenimento import entretenimento
 from bot_jornalista.esporte import esporte
 
+from bot_jornalista.teste import teste
+
 
 
 def main():
@@ -21,8 +23,7 @@ def main():
         layout="wide",
         initial_sidebar_state="expanded",
     )
-    options = ['RPA', 'Fontes pendentes', 'Mundo', 'Brasil', 'C&T', 'Economia', 'Entretenimento', 'Esporte', 'Oração', 'Infantil', 'Previsões', 'Classificados']
-    options = ['Mundo']
+    options = ['Teste', 'RPA', 'Fontes pendentes', 'Mundo', 'Brasil', 'C&T', 'Economia', 'Entretenimento', 'Esporte', 'Oração', 'Infantil', 'Previsões', 'Classificados']
     
     if (not 'user' in st.session_state) or (not 'journalist' in st.session_state['user']['roles']):
         st.header('Jornalista', divider=True)
@@ -34,6 +35,8 @@ def main():
         st.sidebar.title("Menu")
         menu_option = st.sidebar.radio("Selecione a opção", options)
 
+        if menu_option == "Teste":
+            teste()
         if menu_option == "RPA":
             rpa()
         if menu_option == "Fontes pendentes":

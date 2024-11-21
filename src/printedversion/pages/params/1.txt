@@ -1,0 +1,36 @@
+\begin{document}
+
+\frontpageheaderVA
+    {###get_edition_year()###}
+    {###get_edition_number()###}
+    {###get_full_date_str()###}
+
+\thispagestyle{empty}
+
+\frontpagenewsVAone
+    {###image1###}
+    {###h1###}
+    {###preamble1###}
+    {###text1###}
+
+\frontpagenewsVAtwo
+    {###image2###}
+    {###h2###}
+    {###preamble2###}
+    {###text2###}
+
+\frontpagenewsVAthree
+    {###image3###}
+    {###h3###}
+    {###preamble3###}
+    {###text3###}
+
+\frontpagenewsVAfour
+    {###image4###}
+    {###h4###}
+    {###preamble4###}
+    {###text4###}
+
+\frontpagefooterVA
+
+\end{document}

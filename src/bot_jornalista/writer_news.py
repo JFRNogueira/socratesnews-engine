@@ -33,7 +33,7 @@ class WriterNews:
         content = f'Escreva um texto jornalístico que será publicado na seção "{self.section}" de um jornal de grande circulação.\n'
         content += f'Considere como referêcia exclusivamente o que foi extraído de alguns sites de prestígio:{references}'
         content += f'Crie o texto sem enrolação e apenas com informações relevantes. Escreva estritamente a notícia a ser publicada, sem necessidade de dar um título (manchete) ao texto.\n\n'
-        content += f'O texto da notícia deve possui obrigatoriamente entre 700 e 800 palavras.\n'
+        content += f'O texto da notícia deve possui obrigatoriamente entre 400 e 450 palavras.\n'
         content += f'Se a quantidade de palavras não estiver de acordo com o solicitado, ajuste o campo para atender ao requisito antes de finalizar a resposta.\n'
         content += f'Reforço que deve ser apenas o texto, não incluindo manchete, autor preâmbulo ou qualquer coisa diferente do corpo da notícia.\n'
 
@@ -65,9 +65,9 @@ class WriterNews:
             content = f'Escreva um preâmbulo para o texto jornalístico abaixo, que será publicado na seção "{self.section}" de um jornal de grande circulação.\n\n'
             content += f'{self.text}\n\n'
             content += f'Pode considerar como referência de bons títulos a lista a seguir, extraída de jornais de prestígio:\n{references}\n\n\n'
-            content += f'Escreva apenas o título da matéria, que deve conter entre 70 e 100 caracteres.\n'
+            content += f'Escreva apenas o título da matéria, que deve conter entre 8 e 15 palavras.\n'
             content += f'Reforço que deve ser apenas o título, não incluindo texto, autor, preâmbulo ou qualquer coisa diferente do título da notícia.\n'
-            content += f'Se a quantidade de caracteres não estiver de acordo com o solicitado, ajuste o campo para atender ao requisito antes de finalizar a resposta.'
+            content += f'Se a quantidade de palavras não estiver de acordo com o solicitado, ajuste o campo para atender ao requisito antes de finalizar a resposta.'
 
             message = [{
                 'role': 'user',
@@ -94,9 +94,9 @@ class WriterNews:
         try:
             content = f'Escreva um resumo para o texto jornalístico abaixo, que será publicado na seção "{self.section}" de um jornal de grande circulação.\n\n'
             content += f'{self.text}\n\n'
-            content += f'Escreva apenas o preâmbulo da matéria, que deve conter entre 190 e 220 caracteres.\n'
+            content += f'Escreva apenas o preâmbulo da matéria, que deve conter entre 30 e 50 palavras.\n'
             content += f'Reforço que deve ser apenas o preâmbulo, não incluindo texto, autor, título ou qualquer coisa diferente do preâmbulo da notícia.\n'
-            content += f'Se a quantidade de caracteres não estiver de acordo com o solicitado, ajuste o campo para atender ao requisito antes de finalizar a resposta.'
+            content += f'Se a quantidade de palavras não estiver de acordo com o solicitado, ajuste o campo para atender ao requisito antes de finalizar a resposta.'
 
             message = [{
                 'role': 'user',
@@ -123,8 +123,8 @@ class WriterNews:
         try:
             url = f'{st.secrets['API_URL']}api/news'
             payload = {
-                "uid": "aKwP8Bwx34fW18Rkqr4u31uYoQ23",
-                "supportUid": "aKwP8Bwx34fW18Rkqr4u31uYoQ23",
+                "uid": st.secrets['SUPPORT_UID'],
+                "supportUid": st.secrets['SUPPORT_UID'],
                 "h1": self.title,
                 "h2": self.title,
                 "summary": self.summary,
