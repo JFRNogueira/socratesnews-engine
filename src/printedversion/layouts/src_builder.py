@@ -3,7 +3,7 @@ import json
 import os
 import streamlit as st
 
-from bot_jornalista.previsoes_sec import HoroscopoSec
+from journalist.previsoes_sec import HoroscopoSec
 
 
 def get_full_date_str():

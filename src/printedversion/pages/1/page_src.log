@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.31)  8 NOV 2024 16:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.7.31)  1 DEC 2024 12:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -681,20 +681,20 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 )
 \openout1 = `page_src.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 220.
-LaTeX Font Info:    ... okay on input line 220.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 220.
-LaTeX Font Info:    ... okay on input line 220.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 220.
-LaTeX Font Info:    ... okay on input line 220.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 220.
-LaTeX Font Info:    ... okay on input line 220.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 220.
-LaTeX Font Info:    ... okay on input line 220.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 220.
-LaTeX Font Info:    ... okay on input line 220.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 220.
-LaTeX Font Info:    ... okay on input line 220.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 285.
+LaTeX Font Info:    ... okay on input line 285.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 285.
+LaTeX Font Info:    ... okay on input line 285.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 285.
+LaTeX Font Info:    ... okay on input line 285.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 285.
+LaTeX Font Info:    ... okay on input line 285.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 285.
+LaTeX Font Info:    ... okay on input line 285.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 285.
+LaTeX Font Info:    ... okay on input line 285.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 285.
+LaTeX Font Info:    ... okay on input line 285.
  (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count337
@@ -758,9 +758,9 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 227.
+(Font)              <7> on input line 292.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 227.
+(Font)              <5> on input line 292.
 
 
 <QR code requested for "https://jornalsocrates.com.br" in version 0-M.>
@@ -771,76 +771,76 @@ iously calculated.>
 <../../images/logo.png, id=4, 311.1625pt x 95.35625pt>
 File: ../../images/logo.png Graphic file (type png)
 <use ../../images/logo.png>
-Package pdftex.def Info: ../../images/logo.png  used on input line 227.
+Package pdftex.def Info: ../../images/logo.png  used on input line 292.
 (pdftex.def)             Requested size: 185.69237pt x 56.9055pt.
 <./src/printedversion/pages/1/news1.png, id=6, 420.57124pt x 420.57124pt>
 File: ./src/printedversion/pages/1/news1.png Graphic file (type png)
 <use ./src/printedversion/pages/1/news1.png>
 Package pdftex.def Info: ./src/printedversion/pages/1/news1.png  used on input 
-line 243.
+line 308.
 (pdftex.def)             Requested size: 405.02728pt x 405.02728pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--243
+Underfull \hbox (badness 10000) in paragraph at lines 308--308
 \OT1/cmr/m/n/10 parte de sua cam-panha
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--243
+Underfull \hbox (badness 10000) in paragraph at lines 308--308
 \OT1/cmr/m/n/10 pro-grama de de-porta^^Xc~ao
  []
 
 
-Underfull \hbox (badness 7133) in paragraph at lines 243--243
+Underfull \hbox (badness 7133) in paragraph at lines 308--308
 \OT1/cmr/m/n/10 pa^^S^^Ps ocu-pado", en-quanto
  []
 
 
-Underfull \hbox (badness 6758) in paragraph at lines 243--243
+Underfull \hbox (badness 6758) in paragraph at lines 308--308
 \OT1/cmr/m/n/10 a vice-presidente Ka-mala
  []
 
 
-Underfull \hbox (badness 5681) in paragraph at lines 243--243
+Underfull \hbox (badness 5681) in paragraph at lines 308--308
 \OT1/cmr/m/n/10 repetiu suas cr^^S^^Pticas aos
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--243
+Underfull \hbox (badness 10000) in paragraph at lines 308--308
 []\OT1/cmr/m/n/10 Trump tamb^^Sem abor-dou
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--243
+Underfull \hbox (badness 10000) in paragraph at lines 308--308
 \OT1/cmr/m/n/10 men-tar um cr^^Sedito fis-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--243
+Underfull \hbox (badness 10000) in paragraph at lines 308--308
 \OT1/cmr/m/n/10 t^^Saticas semel-hantes para
  []
 
 
-Underfull \hbox (badness 7151) in paragraph at lines 243--243
+Underfull \hbox (badness 7151) in paragraph at lines 308--308
 \OT1/cmr/m/n/10 je-tavam men-sagens como
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--243
+Underfull \hbox (badness 10000) in paragraph at lines 308--308
 \OT1/cmr/m/n/10 \Trump est^^Sa de-se-qui-li-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--243
+Underfull \hbox (badness 10000) in paragraph at lines 308--308
 \OT1/cmr/m/n/10 cen-trava em sua base
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--243
+Underfull \hbox (badness 10000) in paragraph at lines 308--308
 \OT1/cmr/m/n/10 tamb^^Sem in-ten-si-fi-cou sua
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--243
+Underfull \hbox (badness 10000) in paragraph at lines 308--308
 \OT1/cmr/m/n/10 planeja um com^^S^^Pcio em
  []
 
@@ -848,15 +848,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 243--243
 File: ./src/printedversion/pages/1/news2.png Graphic file (type png)
 <use ./src/printedversion/pages/1/news2.png>
 Package pdftex.def Info: ./src/printedversion/pages/1/news2.png  used on input 
-line 269.
+line 334.
 (pdftex.def)             Requested size: 138.70526pt x 138.70526pt.
 
-Underfull \hbox (badness 5022) in paragraph at lines 269--269
+Underfull \hbox (badness 5022) in paragraph at lines 334--334
 \OT1/cmr/m/n/10 se agrava com a pas-sagem
  []
 
 
-Underfull \hbox (badness 4072) in paragraph at lines 269--269
+Underfull \hbox (badness 4072) in paragraph at lines 334--334
 \OT1/cmr/m/n/10 a in-sat-isfa^^Xc~ao pop-u-lar e os
  []
 
@@ -864,15 +864,15 @@ Underfull \hbox (badness 4072) in paragraph at lines 269--269
 File: ./src/printedversion/pages/1/news3.png Graphic file (type png)
 <use ./src/printedversion/pages/1/news3.png>
 Package pdftex.def Info: ./src/printedversion/pages/1/news3.png  used on input 
-line 297.
+line 362.
 (pdftex.def)             Requested size: 138.70143pt x 138.70143pt.
 
-Underfull \hbox (badness 2073) in paragraph at lines 297--297
+Underfull \hbox (badness 2073) in paragraph at lines 362--362
 []\OT1/cmr/m/n/10 Os pa^^S^^Pses do Brics anun-cia-
  []
 
 
-Underfull \hbox (badness 3838) in paragraph at lines 297--297
+Underfull \hbox (badness 3838) in paragraph at lines 362--362
 \OT1/cmr/m/n/10 ram a cria^^Xc~ao da cat-e-go-ria
  []
 
@@ -880,15 +880,15 @@ Underfull \hbox (badness 3838) in paragraph at lines 297--297
 File: ./src/printedversion/pages/1/news4.png Graphic file (type png)
 <use ./src/printedversion/pages/1/news4.png>
 Package pdftex.def Info: ./src/printedversion/pages/1/news4.png  used on input 
-line 303.
+line 368.
 (pdftex.def)             Requested size: 138.70805pt x 138.70805pt.
 <../../images/logo_s.png, id=10, 242.9075pt x 316.68312pt>
 File: ../../images/logo_s.png Graphic file (type png)
 <use ../../images/logo_s.png>
-Package pdftex.def Info: ../../images/logo_s.png  used on input line 305.
+Package pdftex.def Info: ../../images/logo_s.png  used on input line 370.
 (pdftex.def)             Requested size: 26.18617pt x 34.14322pt.
 
-Overfull \hbox (1.32813pt too wide) in paragraph at lines 305--305
+Overfull \hbox (1.32813pt too wide) in paragraph at lines 370--370
  []\OT1/cmr/m/n/10 contato@socratesdata.com 
  []
 
@@ -913,10 +913,10 @@ L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 27755 strings out of 474486
- 691977 string characters out of 5753570
+ 27759 strings out of 474486
+ 692047 string characters out of 5753570
  1982542 words of memory out of 5000000
- 49643 multiletter control sequences out of 15000+600000
+ 49647 multiletter control sequences out of 15000+600000
  559705 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,11n,117p,1039b,753s stack positions out of 10000i,1000n,20000p,200000b,200000s

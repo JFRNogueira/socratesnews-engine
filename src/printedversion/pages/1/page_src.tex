@@ -62,18 +62,36 @@
 
 \newcommand{\frontpageheaderVApar}[5]{
     \begin{tikzpicture}[remember picture, overlay]
-        \node[anchor=west, text=primary, xshift=0.5cm, yshift=-0.9cm] at (current page.north west) {#4};
+        \node[anchor=west, text=primarycolor, xshift=0.5cm, yshift=-0.9cm] at (current page.north west) {#4};
         \draw[thick] ([xshift=1.3cm, yshift=-0.7cm]current page.north west) -- ([xshift=1.3cm, yshift=-1.1cm]current page.north west);
-        \node[anchor=west, text=primary, xshift=1.5cm, yshift=-0.9cm] at (current page.north west) {#5};
+        \node[anchor=west, text=primarycolor, xshift=1.5cm, yshift=-0.9cm] at (current page.north west) {#5};
         \node[anchor=east, text=black, xshift=-3.4cm, yshift=-0.9cm] at (current page.north east) {\makebox[5cm]{#3}};
-        \node[anchor=east, xshift=-0.9cm, yshift=-0.9cm] at (current page.north east) {\includegraphics[height=0.6cm]{images/logo_black.png}};
+        \node[anchor=east, xshift=-0.9cm, yshift=-0.9cm] at (current page.north east) 
+        {\includegraphics[height=0.6cm]{src/printedversion/images/logo_black.png}};
         \draw[thick] ([xshift=-3.2cm, yshift=-0.7cm]current page.north east) -- ([xshift=-3.2cm, yshift=-1.1cm]current page.north east);
+        \filldraw[fill=black, draw=none] 
+        ([xshift=0.5cm, yshift=-1.4cm]current page.north west) rectangle ([xshift=-0.5cm, yshift=-1.5cm]current page.north east);
+        \filldraw[fill=primarycolor, draw=none] 
+        ([xshift=0.5cm, yshift=-1.6cm]current page.north west) rectangle ([xshift=-0.5cm, yshift=-1.8cm]current page.north east);
+    \end{tikzpicture}
+}
+
+\newcommand{\frontpageheaderVAimpar}[5]{
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=east, text=primary, xshift=-0.5cm, yshift=-0.9cm] at (current page.north east) {#4};
+        \draw[thick] ([xshift=-1.3cm, yshift=-0.7cm]current page.north east) -- ([xshift=-1.3cm, yshift=-1.1cm]current page.north east);
+        \node[anchor=east, text=primary, xshift=-1.5cm, yshift=-0.9cm] at (current page.north east) {#5};
+        \node[anchor=west, xshift=0.5cm, yshift=-0.9cm] at (current page.north west) 
+        {\includegraphics[height=0.6cm]{src/printedversion/images/logo_black.png}};
+        \draw[thick] ([xshift=3cm, yshift=-0.7cm]current page.north west) -- ([xshift=3cm, yshift=-1.1cm]current page.north west);
+        \node[anchor=west, text=black, xshift=3.2cm, yshift=-0.9cm] at (current page.north west) {#3};
         \filldraw[fill=black, draw=none] 
         ([xshift=0.5cm, yshift=-1.4cm]current page.north west) rectangle ([xshift=-0.5cm, yshift=-1.5cm]current page.north east);
         \filldraw[fill=primary, draw=none] 
         ([xshift=0.5cm, yshift=-1.6cm]current page.north west) rectangle ([xshift=-0.5cm, yshift=-1.8cm]current page.north east);
     \end{tikzpicture}
 }
+
 
 
 
@@ -169,7 +187,7 @@
         \node[anchor=north west, xshift=0.5cm, yshift=-2cm] at (current page.north west) {
             \parbox{0.50\textwidth}{{\hh{#2}}}};
         \node[anchor=north west, xshift=0.5\textwidth+1cm, yshift=-2cm] at (current page.north west)  
-        {\textcolor{primary}{ \rule{0.15\textwidth}{0.1cm}}};
+        {\textcolor{primarycolor}{ \rule{0.15\textwidth}{0.1cm}}};
         \node[anchor=north west, xshift=0.5\textwidth+1cm, yshift=-2cm] at (current page.north west)  {
             \parbox{0.5\textwidth}{
                 \begin{multicols}{2}
@@ -187,7 +205,7 @@
         \node[anchor=north west, xshift=0.5cm, yshift=-0.5cm] at (current page.west)         
             {\parbox{0.75\textwidth}{{\hh{#2}}}};
         \node[anchor=north west, xshift=0.5cm, yshift=-2.5cm-0.25\textwidth] at (current page.west)  
-            {\parbox{0.25\textwidth}{\textcolor{primary}{ \rule{0.15\textwidth}{0.1cm}}}};
+            {\parbox{0.25\textwidth}{\textcolor{primarycolor}{ \rule{0.15\textwidth}{0.1cm}}}};
         \node[anchor=north west, xshift=0.5cm, yshift=-1.5cm] at (current page.west)  {
             \parbox{0.75\textwidth}{
                 \begin{multicols}{3}
@@ -203,10 +221,57 @@
 \newcommand{\newspageVAthree}[4]{
     \begin{tikzpicture}[remember picture, overlay]
         \node[anchor=north west, xshift=0.81\textwidth, yshift=-0.5cm] at (current page.west) {\includegraphics[width=0.23\textwidth, height=0.23\textwidth]{#1}};
-        \node[anchor=north west, xshift=0.81\textwidth, yshift=-0.23\textwidth-0.8cm] at (current page.west) {\textcolor{primary}{ \rule{0.15\textwidth}{0.1cm}}};
+        \node[anchor=north west, xshift=0.81\textwidth, yshift=-0.23\textwidth-0.8cm] at (current page.west) {\textcolor{primarycolor}{ \rule{0.15\textwidth}{0.1cm}}};
         \node[anchor=north west, xshift=0.81\textwidth, yshift=-0.23\textwidth-1.2cm] at (current page.west) {\parbox{0.23\textwidth}{\hh{#2} \\ \newline #3}};
     \end{tikzpicture}
 }
+
+
+
+\newcommand{\forecastsections}{
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=north west, xshift=0.5cm, yshift=-2cm] at (current page.north west) 
+        {\parbox{0.5\textwidth}{\h{Horóscopo}}};
+        \node[anchor=north west, xshift=0.5cm, yshift=-22cm] at (current page.north west)
+        {\parbox{0.5\textwidth}{\h{Tempo}}};
+    \end{tikzpicture}
+}
+
+
+
+% Coluna (0 ou 1), linha (0 a 5), imagem, título, texto
+\newcommand{\forecasthoroscope}[5]{
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=north west, xshift=0.5cm + #1*0.5\textwidth, yshift=-3.3cm - #2*3.2cm] at (current page.north west) 
+        {\includegraphics[width=2cm, height=2cm]{#3}}; 
+        \node[anchor=north west, xshift=0.5cm + #1*0.5\textwidth, yshift=-2.8cm - #2*3.2cm] at (current page.north west)         
+        {\parbox{0.5\textwidth}{\textbf{#4}}};
+        \node[anchor=north west, xshift=2.6cm + #1*0.5\textwidth, yshift=-3.4cm - #2*3.2cm] at (current page.north west)         
+        {\parbox{0.38\textwidth}{#5}};
+    \end{tikzpicture}
+}
+
+
+
+% Coluna (0 ou 1), linha (0 a 5), imagem da previsão, Cidade, título, temperatura máxima, temperatura mínima, chance de chuva
+\newcommand{\forecastweather}[7]{
+    \begin{tikzpicture}[remember picture, overlay]
+        \draw[primary, thick, rounded corners=0.4cm] ([xshift=0.5cm + #2*0.5\textwidth, yshift=6cm - #1*1cm]current page.south west)
+        rectangle ++(9.5cm, 0.8cm);
+        \node[anchor=west, xshift=0.6cm + #2*0.5\textwidth, yshift=6.4cm - #1*1cm] at (current page.south west) 
+        {\includegraphics[width=0.6cm, height=0.6cm]{#3}};
+        \node[anchor=west, xshift=1.4cm + #2*0.5\textwidth, yshift=6.4cm - #1*1cm] at (current page.south west) 
+        {\textbf{#4}};
+        \node[anchor=west, xshift=5cm + #2*0.5\textwidth, yshift=6.4cm - #1*1cm] at (current page.south west) 
+        {#5°C};
+        \node[anchor=west, xshift=6cm + #2*0.5\textwidth, yshift=6.4cm - #1*1cm] at (current page.south west) 
+        {a #6°C};
+        \node[anchor=west, xshift=7.5cm + #2*0.5\textwidth, yshift=6.4cm - #1*1cm] at (current page.south west) 
+        {Chuva: #7\%};
+    \end{tikzpicture}
+}
+
+
 
 
 

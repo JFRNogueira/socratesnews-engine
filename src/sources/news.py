@@ -196,7 +196,7 @@ class News:
         if 'windowsclub.com.br' in self.url:
             newsdata = WindowsClub(self.soup)
             return 'windowsclub', newsdata
-        with open('src/bot_jornalista/not_found_url_reader.csv', mode="a", newline='') as file:
+        with open('src/journalist/not_found_url_reader.csv', mode="a", newline='') as file:
             writer = csv.DictWriter(file, fieldnames=["ts", "url"])
             if file.tell() == 0:
                 writer.writeheader()
