@@ -7,12 +7,13 @@ import streamlit as st
 
 class WriterNews:
 
-    def __init__(self, section, referenceNews, referenceTitles, imageUrl, imageText):
+    def __init__(self, section, referenceNews, referenceTitles, imageUrl, imageText, allReferences):
         self.section = section # String
         self.referenceNews = referenceNews # Array de strings
         self.referenceTitles = referenceTitles # Array de strings
         self.imageUrl = imageUrl # String
         self.imageText = imageText # String
+        self.allReferences = allReferences # Array de objetos (notícias cruas)
         
         self.text = self.create_news_text()
         self.title = self.create_news_title()
@@ -131,6 +132,7 @@ class WriterNews:
                 "text": self.text,
                 "imageUrl": self.imageUrl,
                 "imageText": self.imageText,
+                "referenceNews": self.allReferences,
                 "sectionName": self.section,
                 "__t": "published",
             }

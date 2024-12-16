@@ -1,6 +1,5 @@
 import streamlit as st
 from journalist.writer_news import WriterNews
-from sources.google_news import GoogleNews
 from sources.google_news import GoogleNews, GoogleNewsCluster
 from streamlit_image_select import image_select
 
@@ -19,7 +18,6 @@ class GoogleNewsUi:
     
     # Renderizar o editor de dados depois das métricas
     def render_editor(self, n_news = 0):
-        
         df = st.session_state[f"{self.sectionNameLower}_themes"].copy()
         valid_titles = df[df['title'] != 'N/A']
         st.session_state[f'{self.sectionNameLower}_themes'] 
@@ -49,6 +47,20 @@ class GoogleNewsUi:
         valid_rows = df[df["title"] != "N/A"].head(4).index  # Seleciona os índices válidos
         df.loc[valid_rows, "create"] = True  # Marca as linhas selecionadas
         st.session_state[f'{self.sectionNameLower}_themes_selection'] = df
+    
+    
+    
+    def create_referente_news_df(self, n_news): # n_news > 0
+        return st.data_editor(
+            st.session_state[f'{self.sectionNameLower}_news_{n_news}_reference_news'], 
+            column_config={
+                "create": st.column_config.CheckboxColumn("Criar?"),
+                "url": st.column_config.LinkColumn(
+                "Link", display_text="Link",disabled=True),
+                "title": st.column_config.TextColumn("Título",max_chars=100,disabled=True),
+            },
+            hide_index=True
+        )
 
     
     
@@ -77,13 +89,15 @@ class GoogleNewsUi:
                 if any(f'{self.sectionNameLower}_news_{i}_image_text' in st.session_state for i in range(1, 10)):
                     if st.button(f"Gerar todas as notícias"):
                         for i in range(1, 20):
-                            if f'{self.sectionNameLower}_news_{i}_image_text' in st.session_state:
-                                selection = st.session_state[f'{self.sectionNameLower}_news_{i}_reference_news_selected']
-                                st.session_state[f'{self.sectionNameLower}_news_{i}_final'] = WriterNews(self.sectionName, 
-                                    selection[selection['source'] == True]['text'].tolist(),
-                                    selection[selection['source'] == True]['title'].tolist(),
-                                    st.session_state[f'{self.sectionNameLower}_news_{i}_image_url'],
-                                    st.session_state[f'{self.sectionNameLower}_news_{i}_image_text'])
+                            # TODO: Encontrar uma melhor maneira de avaliar o item abaixo de modo a não depender de iagem
+                            st.session_state[f'{self.sectionNameLower}_news_{i}_reference_news_selected'] = self.create_referente_news_df(i)
+                            st.session_state[f'{self.sectionNameLower}_news_{i}_final'] = WriterNews(self.sectionName, 
+                                selection[selection['source'] == True]['text'].tolist(),
+                                selection[selection['source'] == True]['title'].tolist(),
+                                st.session_state[f'{self.sectionNameLower}_news_{i}_image_url'],
+                                st.session_state[f'{self.sectionNameLower}_news_{i}_image_text'],
+                                st.session_state[f'{self.sectionNameLower}_news_{i}_reference_news_selected']
+                                )
 
                             
 
@@ -134,24 +148,7 @@ class GoogleNewsUi:
 
                             # Show dataframe with references
                             if st.checkbox(f'Ver referências para notícia {n_tab}', value = True):
-                                st.session_state[f'{self.sectionNameLower}_news_{n_tab}_reference_news_selected'] = st.data_editor(
-                                    st.session_state[f'{self.sectionNameLower}_news_{n_tab}_reference_news'], 
-                                    column_config={
-                                        "create": st.column_config.CheckboxColumn(
-                                            "Criar?",
-                                        ),
-                                        "url": st.column_config.LinkColumn(
-                                            "Link", display_text="Link",
-                                            disabled=True
-                                        ),
-                                        "title": st.column_config.TextColumn(
-                                            "Título",
-                                            max_chars=100,
-                                            disabled=True
-                                        ),
-                                    },
-                                    hide_index=True
-                                )
+                                self.create_referente_news_df(n_tab)
 
                             if f'{self.sectionNameLower}_news_{n_tab}_reference_news_selected' in st.session_state:
                                 if st.button(f'Gerar notícia {n_tab}'):

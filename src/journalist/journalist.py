@@ -1,6 +1,7 @@
 import streamlit as st
 
 from journalist.google_news_ui import GoogleNewsUi
+from journalist.image_selector import ImageSelector
 from journalist.infantil import infantil
 from journalist.previsoes import previsoes
 
@@ -28,7 +29,7 @@ class Journalist:
     def ui(self):
 
         # options = ['Teste', 'RPA', 'Fontes pendentes''Oração', 'Infantil', 'Previsões', 'Classificados']
-        options = ['RPA - Escritor', 'Mundo', 'Brasil', 'C&T', 'Economia', 'Entretenimento', 'Esporte']
+        options = ['RPA - Escritor', 'Mundo', 'Brasil', 'CeT', 'Economia', 'Entretenimento', 'Esporte', 'Selecionar imagem']
         
         st.sidebar.title("Menu")
         menu_option = st.sidebar.radio("Selecione a opção", options)
@@ -39,14 +40,16 @@ class Journalist:
             GoogleNewsUi('Mundo').ui()
         if menu_option == "Brasil":
             GoogleNewsUi('Brasil').ui()
-        if menu_option == "C&T":
-            GoogleNewsUi('C&T').ui()
+        if menu_option == "CeT":
+            GoogleNewsUi('CeT').ui()
         if menu_option == "Economia":
             GoogleNewsUi('Economia').ui()
         if menu_option == "Entretenimento":
             GoogleNewsUi('Entretenimento').ui()
         if menu_option == "Esporte":
             GoogleNewsUi('Esporte').ui()
+        if menu_option == "Selecionar imagem":
+            ImageSelector().ui()
 
         # if menu_option == "Teste":
         #     teste()
@@ -54,7 +57,7 @@ class Journalist:
         #     rpa()
         # if menu_option == "Fontes pendentes":
         #     fontes_pendentes()
-        # if menu_option == "C&T":
+        # if menu_option == "CeT":
         #     cet()
         # if menu_option == "Economia":
         #     economia()
