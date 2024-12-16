@@ -21,9 +21,9 @@ class RPAWriter:
     
     def create_news_from_google(self, sectionName):
         if st.session_state.get(f'rpa_counter_{sectionName.lower()}', 0) > 0:
-            GoogleNews([sectionName])
-            GoogleNewsUi(sectionName).render_editor(n_news=st.session_state.get(f'rpa_counter_{sectionName.lower()}', 0))
-            GoogleNewsCluster([sectionName]).get_all_references()
+            # GoogleNews([sectionName])
+            # # GoogleNewsUi(sectionName).render_editor(n_news=st.session_state.get(f'rpa_counter_{sectionName.lower()}', 0))
+            # GoogleNewsCluster([sectionName]).get_all_references()
             
             for i in range(1, st.session_state.get(f'rpa_counter_{sectionName.lower()}', 0)+1):
                 st.session_state[f'{sectionName.lower()}_news_{i}_reference_news_selected'] = GoogleNewsUi(sectionName).create_referente_news_df(i)
@@ -31,8 +31,8 @@ class RPAWriter:
                 st.session_state[f'{sectionName.lower()}_news_{i}_final'] = WriterNews(sectionName, 
                     selection[selection['source'] == True]['text'].tolist(),
                     selection[selection['source'] == True]['title'].tolist(),
-                    st.session_state.get(f'{sectionName.lower()}_news_{i}_image_url',''),
-                    st.session_state.get(f'{sectionName.lower()}_news_{i}_image_text',''),
+                    '', #st.session_state.get(f'{sectionName.lower()}_news_{i}_image_url',''),
+                    '', #st.session_state.get(f'{sectionName.lower()}_news_{i}_image_text',''),
                     st.session_state[f'{sectionName.lower()}_news_{i}_all_news'].to_dict(orient='records')
                     )
 
