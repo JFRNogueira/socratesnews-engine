@@ -94,7 +94,7 @@ def cut_image(url, index):
         st.session_state.get('printed_version_news_adaption_image_x', 10) + st.session_state.get('printed_version_news_adaption_image_size', 30), 
         st.session_state.get('printed_version_news_adaption_image_y', 20) + st.session_state.get('printed_version_news_adaption_image_size', 30)], 
         outline="red", width=3)
-    st.image(img_with_square, use_column_width=True)
+    st.image(img_with_square, use_container_width=True)
 
 
 

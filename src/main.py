@@ -2,6 +2,7 @@ import streamlit as st
 # from auth.sign_in import sign_in
 # from auth.sign_up import sign_up
 # from auth.authentication import authentication
+from analytics.analytics import Analytics
 from authentication import Authentication
 from pathlib import Path
 
@@ -13,11 +14,11 @@ from users.users import Users
 def app():
     logo_path = Path(__file__).parent / "assets" / "logo.png"
     if logo_path.exists():
-        st.sidebar.image(str(logo_path), use_column_width=True)
+        st.sidebar.image(str(logo_path), use_container_width=True)
     else:
         st.sidebar.error("Logo não encontrada no caminho especificado.")
     
-    pages = ["📰 Jornalista", "👤 Usuários", "🏫 Escolas", "📊 Desempenho"]
+    pages = ["📰 Jornalista", "👤 Usuários", "🏫 Escolas", "📊 Analytics"]
     selected_page = st.sidebar.selectbox("Página", pages)
 
 
@@ -26,8 +27,8 @@ def app():
     
     if selected_page == "👤 Usuários":
         Users().ui()
-    elif selected_page == "🏫 Escolas":
-        st.sidebar.error("Logo não encontrada no caminho especificado.")
+    elif selected_page == "📊 Analytics":
+        Analytics().ui()
         # Schools().ui()
     elif selected_page == "Sair":
         Authentication().logout()

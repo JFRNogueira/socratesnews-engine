@@ -4,6 +4,7 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 from journalist.google_news_ui import GoogleNewsUi
+from journalist.prayer import Prayer
 from journalist.writer_news import WriterNews
 from sources.google_news import GoogleNews, GoogleNewsCluster
 from streamlit_image_select import image_select
@@ -21,21 +22,22 @@ class RPAWriter:
     
     def create_news_from_google(self, sectionName):
         if st.session_state.get(f'rpa_counter_{sectionName.lower()}', 0) > 0:
-            # GoogleNews([sectionName])
-            # # GoogleNewsUi(sectionName).render_editor(n_news=st.session_state.get(f'rpa_counter_{sectionName.lower()}', 0))
-            # GoogleNewsCluster([sectionName]).get_all_references()
+            GoogleNews([sectionName])
+            GoogleNewsUi(sectionName).render_editor(n_news=st.session_state.get(f'rpa_counter_{sectionName.lower()}', 0))
+            GoogleNewsCluster([sectionName]).get_all_references()
             
             for i in range(1, st.session_state.get(f'rpa_counter_{sectionName.lower()}', 0)+1):
-                st.session_state[f'{sectionName.lower()}_news_{i}_reference_news_selected'] = GoogleNewsUi(sectionName).create_referente_news_df(i)
+                st.session_state[f'{sectionName.lower()}_news_{i}_reference_news_selected'] = GoogleNewsUi(sectionName).create_reference_news_df(i)
                 selection = st.session_state[f'{sectionName.lower()}_news_{i}_reference_news_selected']
                 st.session_state[f'{sectionName.lower()}_news_{i}_final'] = WriterNews(sectionName, 
                     selection[selection['source'] == True]['text'].tolist(),
                     selection[selection['source'] == True]['title'].tolist(),
-                    '', #st.session_state.get(f'{sectionName.lower()}_news_{i}_image_url',''),
-                    '', #st.session_state.get(f'{sectionName.lower()}_news_{i}_image_text',''),
+                    st.session_state.get(f'{sectionName.lower()}_news_{i}_image_url',''),
+                    st.session_state.get(f'{sectionName.lower()}_news_{i}_image_text',''),
                     st.session_state[f'{sectionName.lower()}_news_{i}_all_news'].to_dict(orient='records')
                     )
-
+    
+    
     
     
     
@@ -63,7 +65,7 @@ class RPAWriter:
             
         with col2:
             st.subheader('Seções secundárias', divider=True)
-            st.checkbox('Oração', value=True)
+            st.checkbox('Oração', value=True, key='rpa_oracao_checker')
             st.checkbox('Infantil', value=True)
             st.checkbox('Horóscopo', value=True)
             st.checkbox('Previsão do tempo', value=True)
@@ -78,15 +80,8 @@ class RPAWriter:
             if st.button('Escrever'):
                 for l in list_sections:
                     self.create_news_from_google(l['sectionName'])
+                if st.session_state.get('rpa_oracao_checker', False):
+                    Prayer().rpa(n_days=1)
                 
-            # st.progress(0.5, 'Notícias gerais')
-            # st.progress(0.5, 'Cidades primárias')
-            # st.progress(0.5, 'Cidades secundárias')
-            # st.progress(0.5, 'Cidades terciárias')
-            # st.progress(0.5, 'Seções secundárias')
-            # st.progress(0.5, 'Classificados')
-
-            
-        
 
 

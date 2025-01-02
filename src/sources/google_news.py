@@ -1,3 +1,5 @@
+import csv
+from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
 import os
@@ -95,16 +97,37 @@ class GoogleNewsCluster:
 
     def get_selected_themes_df(self, section):
         return st.session_state[f'{section.lower()}_themes_selection']
+    
+    
+
+    def record_news_fields(self, news):
+        with open('src/analytics/not_found_sites.py', mode="a", newline='') as file:
+            writer = csv.DictWriter(file, fieldnames=["ts", "url", 'title', 'summary', 'text', 'imageUrl', 'imageText'])
+            if file.tell() == 0:
+                writer.writeheader()
+            writer.writerow({
+                "ts": datetime.now().isoformat(), 
+                "url": news['url'], 
+                "title": int(not news['title'] == None), 
+                "summary": int(not news['summary'] == None), 
+                "text": int(not news['text'] == None), 
+                "imageUrl": int(not news['imageUrl'] == None), 
+                "imageText": int(not news['imageText'] == None)
+                })
+
 
 
     def get_all_references(self):
         for section in self.sections:
             selected_themes = self.get_selected_themes_df(section)
             counter = 1
+            
             for index, t in selected_themes.iterrows():
                 if t['create']:
                     all_news, reference_news, reference_images = self.get_reference_news(t['url'])
-                    print(reference_news)
+                    
+                    for i, r in reference_news.iterrows():
+                        self.record_news_fields({'url': r['url'], 'title': r['title'], 'summary': '', 'text': r['text'], 'imageUrl': r['imageUrl'], 'imageText': r['imageText']})
                     
                     reference_news['n_words'] = reference_news['text'].apply(lambda x: len(x.split()))
                     reference_news = reference_news.sort_values(by='n_words', ascending=False)
@@ -116,7 +139,7 @@ class GoogleNewsCluster:
                     st.session_state[f'{section.lower()}_news_{counter}_reference_news'] = reference_news
                     st.session_state[f'{section.lower()}_news_{counter}_reference_images'] = reference_images
                     counter += 1
-                
+            
                 
                 
                 

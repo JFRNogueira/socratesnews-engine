@@ -52,7 +52,7 @@ def create_news():
         imageSource = st.text_input("Fonte da imagem")
         imageUrl = st.text_input("URL da imagem")
         if st.button("Visualizar"):
-            st.image(imageUrl, caption="Imagem da notícia", use_column_width=True)
+            st.image(imageUrl, caption="Imagem da notícia", use_container_width=True)
         publishAtDate = st.date_input("Publicar em")
         publishAtTime = st.time_input("Publicado em hora")
     

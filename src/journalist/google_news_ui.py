@@ -50,7 +50,7 @@ class GoogleNewsUi:
     
     
     
-    def create_referente_news_df(self, n_news): # n_news > 0
+    def create_reference_news_df(self, n_news): # n_news > 0
         return st.data_editor(
             st.session_state[f'{self.sectionNameLower}_news_{n_news}_reference_news'], 
             column_config={
@@ -90,7 +90,7 @@ class GoogleNewsUi:
                     if st.button(f"Gerar todas as notícias"):
                         for i in range(1, 20):
                             # TODO: Encontrar uma melhor maneira de avaliar o item abaixo de modo a não depender de iagem
-                            st.session_state[f'{self.sectionNameLower}_news_{i}_reference_news_selected'] = self.create_referente_news_df(i)
+                            st.session_state[f'{self.sectionNameLower}_news_{i}_reference_news_selected'] = self.create_reference_news_df(i)
                             st.session_state[f'{self.sectionNameLower}_news_{i}_final'] = WriterNews(self.sectionName, 
                                 selection[selection['source'] == True]['text'].tolist(),
                                 selection[selection['source'] == True]['title'].tolist(),
@@ -148,7 +148,7 @@ class GoogleNewsUi:
 
                             # Show dataframe with references
                             if st.checkbox(f'Ver referências para notícia {n_tab}', value = True):
-                                self.create_referente_news_df(n_tab)
+                                self.create_reference_news_df(n_tab)
 
                             if f'{self.sectionNameLower}_news_{n_tab}_reference_news_selected' in st.session_state:
                                 if st.button(f'Gerar notícia {n_tab}'):
