@@ -24,7 +24,10 @@ class ImageSelector:
                 "uid": st.secrets['SUPPORT_UID'],
                 "supportUid": st.secrets['SUPPORT_UID'],
             }
-            response = requests.get(url, params=params)
+            response = requests.get(url, json=params)
+            if response.status_code != 200:
+                print(f'Erro: {response.status_code}')
+            st.markdown(url)
 
             if response.status_code != 200:
                 print(f'Erro: {response.status_code}')
@@ -32,8 +35,11 @@ class ImageSelector:
 
             newsId = response.json()['newsId']
             referenceNews = pd.DataFrame(response.json()['referenceNews'])
-            referenceNewsListUrl = referenceNews[referenceNews['imageUrl'].notna()]['imageUrl'].tolist()
-            referenceNewsListText = referenceNews[referenceNews['imageUrl'].notna()]['imageText'].tolist()
+            referenceNews['imageUrl'] = referenceNews['imageUrl'].astype(str)
+            referenceNews = referenceNews[referenceNews['imageUrl'].str.startswith('http')]
+            referenceNews = pd.concat([referenceNews, pd.DataFrame([{'imageUrl': 'https://storage.googleapis.com/socrates-news.appspot.com/images/no_no_image.png', 'imageText': 'Sem imagem'}])], ignore_index=True)
+            referenceNewsListUrl = referenceNews['imageUrl'].tolist()
+            referenceNewsListText = referenceNews['imageText'].tolist()
             
             return newsId, referenceNews, referenceNewsListUrl, referenceNewsListText
 
@@ -43,6 +49,15 @@ class ImageSelector:
     
     
     
+    def show_no_image_news(self):
+        news_id, news_df, url_list, text_list = self.get_no_image_news()
+        st.session_state['no_image_news_newsid'] = news_id
+        st.session_state['no_image_news_df'] = news_df
+        st.session_state['image_src_list_url'] = url_list
+        st.session_state['image_src_list_text'] = text_list
+        st.session_state['aleatory_key'] = str(random.randint(1, 1000000))
+
+        
     def update_image_news(self, newsId, imageUrl):
         try:
             url = f'{st.secrets["API_URL"]}api/news/{newsId}'
@@ -67,27 +82,29 @@ class ImageSelector:
     
     
     def ui(self):
-        st.header('Seletor de imagens')
+        st.header('Seletor de magens')
         
-        col1, col2 = st.columns([1, 3], gap='large')
+        col1, col2 = st.columns([1, 5], gap='large')
         
         with col1:
-            st.subheader('Google News', divider=True)
+            st.subheader('Buscador', divider=True)
             
-            if st.button('Buscar notícias'):
-                a, b, c, d = self.get_no_image_news()
-                st.session_state['no_image_news_newsid'] = a
-                st.session_state['no_image_news_df'] = b
-                st.session_state['image_src_list_url'] = c
-                st.session_state['image_src_list_text'] = d
-                st.session_state['aleatory_key'] = str(random.randint(1, 1000000))
+            if st.button('Buscar', type='primary'):
+                self.show_no_image_news()
                 
-            if st.checkbox('Todas as notícias', value=False):
-                st.dataframe(st.session_state['no_image_news_df'])
-            if st.checkbox('Notícias com imagens', value=False):
-                # st.dataframe(st.session_state['image_src_list_url'])
-                st.markdown(st.session_state['image_src_list_url'])
- 
+            if st.checkbox('Apenas notícias com imagens', value=False):
+                if 'image_src_list_url' in st.session_state and st.session_state['image_src_list_url'] != None:
+                    st.markdown(st.session_state['image_src_list_url'])
+                else:
+                    st.warning('Não há notícias a serem listadas')
+            else:
+                if 'no_image_news_df' in st.session_state and st.session_state['no_image_news_df'] != None:
+                    st.markdown(st.session_state['no_image_news_df'])
+                else:
+                    st.warning('Não há notícias com imagens a serem listadas')
+
+
+
         with col2:
             st.subheader('Selecionar imagem', divider=True)
             
@@ -111,6 +128,7 @@ class ImageSelector:
                             st.error("Índice selecionado inválido!")
                     else:
                         st.error("Nenhuma imagem disponível para salvar!")
+                st.text_input('URL')
                         
             with col22:
                 st.file_uploader('Upload de imagem', key='image_upload')

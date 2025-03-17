@@ -33,7 +33,6 @@ from sources.o_tempo import OTempo
 from sources.o_vicio import OVicio
 from sources.poder360 import Poder360
 from sources.r7 import R7
-# from sources.series_do_momento import SeriesDoMomento
 from sources.tecmundo import TecMundo
 from sources.terra import Terra
 from sources.trivela import Trivela
