@@ -22,10 +22,10 @@ class RPAWriter:
 
     def get_searched_news(self):
         try:
-            url = f'{st.secrets['API_URL']}api/searchednews'
+            url = f'https://api-prod.jornalsocrates.com.br/api/searchednews'
             payload = {
-                "uid": st.secrets['SUPPORT_UID'],
-                "supportUid": st.secrets['SUPPORT_UID']
+                "uid": 'jvfbEGdoKJYokMi4FgA3AFMI4tO2',
+                "supportUid": 'jvfbEGdoKJYokMi4FgA3AFMI4tO2'
             }
             response = requests.get(url, json=payload)
             if response.status_code != 200:
@@ -123,10 +123,10 @@ class RPAWriter:
 
     def save_complete_news(self, newsId):
         try:
-            url = f'{st.secrets['API_URL']}api/news/{newsId}'
+            url = f'https://api-prod.jornalsocrates.com.br/api/news/{newsId}'
             payload = {
-                "uid": st.secrets['SUPPORT_UID'],
-                "supportUid": st.secrets['SUPPORT_UID'],
+                "uid": 'jvfbEGdoKJYokMi4FgA3AFMI4tO2',
+                "supportUid": 'jvfbEGdoKJYokMi4FgA3AFMI4tO2',
                 "h1": self.h1,
                 "h2": self.h2,
                 "summary": self.summary,
@@ -139,6 +139,107 @@ class RPAWriter:
             return response
         except Exception as e:
             print("Problema ao salvar notícia em save_searched_news:", e)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class RPAWriter:
+
+    def __init__(self):
+        self.searched_news = self.get_searched_news() # Notícias originais
+        self.text = self.create_news_text() # Conteúdo do texto da notícia
+        self.h1 = self.create_news_title() # Texto do título da notícia
+        self.summary = self.create_news_summary() # Texto do resumo da notícia
+        self.save_complete_news() # Salvar notícia no banco de dados
+        
+    # Buscar notícia que possua conteúdo enriquecido mas ainda não está criada
+    def get_searched_news(self):
+        # Código principal
+        result_example = {
+                "reference_news": [],
+                "__t": "enriched"
+            }
+        return result_example
+
+
+
+    # Criar o texto da matéria
+    def create_news_text(self):
+        # Código principal
+        result_example = "Texto jornalístico gerado"
+        return result_example
+
+    # Criar um título (manchete) para a notícia
+    def create_news_title(self):
+        # Código principal
+        result_example = "Título da notícia"
+        return result_example
+
+    # Criar resumo da notícia
+    def create_news_summary(self):
+        # Código principal
+        result_example = "Resumo da notícia"
+        return result_example
+
+    # Salvar dados gerados em banco de dados
+    def save_complete_news():
+        # Código principal
+        result_example = {'status': 200, 'message': 'The news item has been successfully saved'}
+        return result_example
 
 
 
