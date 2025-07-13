@@ -1,0 +1,9 @@
+openai
+pandas
+pyperclip
+requests
+selenium
+streamlit
+streamlit_image_select
+time
+webdriver_manager
